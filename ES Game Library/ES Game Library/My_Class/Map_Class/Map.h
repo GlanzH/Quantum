@@ -10,5 +10,7 @@ public:
 	virtual void Update();
 	virtual void Draw();
 private:
-
+	MODEL Road;
+	MODEL Pillar;
+	MODEL Side;
 };
