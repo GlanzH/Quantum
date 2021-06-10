@@ -6,7 +6,9 @@ class Map
 public:
 	Map() {};
 	~Map() {};
-
+	virtual void Initialize();
+	virtual void Update();
+	virtual void Draw();
 private:
 
 };
