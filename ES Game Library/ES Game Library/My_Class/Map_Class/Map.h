@@ -4,17 +4,9 @@
 class Map
 {
 public:
-	MyClass();
-	~MyClass();
+	Map() {};
+	~Map() {};
 
 private:
 
 };
-
-MyClass::MyClass()
-{
-}
-
-MyClass::~MyClass()
-{
-}
