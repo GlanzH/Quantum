@@ -169,7 +169,7 @@
     <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_Second\Enemy_Second.cpp" />
     <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_Third\Enemy_Third.cpp" />
     <ClCompile Include="My_Class\All_Enemy\Enemy_Manager\Enemy_Maneger.cpp" />
-    <ClCompile Include="My_Class\Camera_Class\Camera.cpp" />
+    <ClCompile Include="My_Class\Camera_Class\PlayerCamera.cpp" />
     <ClCompile Include="My_Class\EnumManager\EnumManager.cpp" />
     <ClCompile Include="My_Class\Game_Scene\Game_Claer\Game_Claer.cpp" />
     <ClCompile Include="My_Class\Game_Scene\Game_Over\Game_Over.cpp" />
@@ -241,7 +241,7 @@
     <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_Second\Enemy_Second.h" />
     <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_Third\Enemy_Third.h" />
     <ClInclude Include="My_Class\All_Enemy\Enemy_Manager\Enemy_Manager.h" />
-    <ClInclude Include="My_Class\Camera_Class\Camera.h" />
+    <ClInclude Include="My_Class\Camera_Class\PlayerCamera.h" />
     <ClInclude Include="My_Class\EnumManager\EnumManager.h" />
     <ClInclude Include="My_Class\Game_Scene\Game_Claer\Game_Claer.h" />
     <ClInclude Include="My_Class\Game_Scene\Game_Over\Game_Over.h" />

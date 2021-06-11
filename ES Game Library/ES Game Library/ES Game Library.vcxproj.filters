@@ -385,14 +385,14 @@
     <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_One\Enemy_One.cpp">
       <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_One</Filter>
     </ClCompile>
-    <ClCompile Include="My_Class\Camera_Class\Camera.cpp">
-      <Filter>ALL_Class\Camera_Class</Filter>
-    </ClCompile>
     <ClCompile Include="My_Class\Map_Class\Map.cpp">
       <Filter>ALL_Class\Map_Class</Filter>
     </ClCompile>
     <ClCompile Include="My_Class\Game_Scene\Result_Scene\Result_Scene.cpp">
       <Filter>ALL_Class\Game_Class\Result_Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Camera_Class\PlayerCamera.cpp">
+      <Filter>ALL_Class\Camera_Class</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -604,14 +604,14 @@
     <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_One\Enemy_One.h">
       <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_One</Filter>
     </ClInclude>
-    <ClInclude Include="My_Class\Camera_Class\Camera.h">
-      <Filter>ALL_Class\Camera_Class</Filter>
-    </ClInclude>
     <ClInclude Include="My_Class\Map_Class\Map.h">
       <Filter>ALL_Class\Map_Class</Filter>
     </ClInclude>
     <ClInclude Include="My_Class\Game_Scene\Result_Scene\Result_Scene.h">
       <Filter>ALL_Class\Game_Class\Result_Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Camera_Class\PlayerCamera.h">
+      <Filter>ALL_Class\Camera_Class</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
