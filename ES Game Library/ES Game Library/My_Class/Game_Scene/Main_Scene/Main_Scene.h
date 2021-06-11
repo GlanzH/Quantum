@@ -3,6 +3,7 @@
 #include"../../Player_Class/Player/Player.h"
 #include"../../All_Enemy/Enemy_Base/Enemy_Base.h"
 #include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
+#include"../../Map_Class/Map.h"
 
 class Main_Scene : public BaseScene
 {
@@ -25,5 +26,6 @@ private:
 	float Main3_x;
      //Player player;//
 	//Enemy_Manager enemy_manager;
+	Map map;
 	MUSIC  BGM;
 };

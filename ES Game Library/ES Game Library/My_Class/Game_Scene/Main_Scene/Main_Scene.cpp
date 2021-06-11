@@ -2,6 +2,11 @@
 #include"../../Scene_Manegeer/SceneManager.h"
 #include"../../Player_Class/Player/Player.h"
 #include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
+#include"../../Map_Class/Map.h"
+
+
+
+
 
 void Main_Scene::Initialize()
 {
@@ -14,6 +19,9 @@ void Main_Scene::Initialize()
 	Main2_x = Main_x + 1280.0f;
 	Main3_x = Main2_x + 1280.0f;
 	//enemy_manager.Initialize();
+	map.Initialize();
+
+
 }
 void Main_Scene::Update()
 {
@@ -53,6 +61,6 @@ void Main_Scene::Draw()
 	SpriteBatch.Draw(*Main_Secoud, Vector3(Main2_x, 0, 0));
 	SpriteBatch.Draw(*Main_Third, Vector3(Main3_x, 0, 0));
 	/*player.Draw3D();*/
-	
+	map.Draw();
 	//enemy_manager.Draw();
 }

@@ -5,14 +5,16 @@ void Title_Scene::Initialize()
 {
 	Title_BG = GraphicsDevice.CreateSpriteFromFile(_T("GameSceneMaterial/Title_Material/Title.png"));
 	Letter = GraphicsDevice.CreateSpriteFromFile(_T("GameSceneMaterial/Title_Material/start.png"));
-	
 	 Blinking= 0;
+	 InputDevice.CreateGamePad(1);
+	
 }
 void Title_Scene::Update()
 { 
 	Blinking += 0.01;
-	
-	if (Input.GetKeybordInputDown(Keys_Enter))
+	GamePadState pad = GamePad(0)->GetState();
+	GamePadBuffer pad_buffer = GamePad(0)->GetBuffer();
+	if (Input.GetKeybordInputDown(Keys_Enter)||pad_buffer.IsPressed(DIJOFS_BUTTON2))
 	{
 			SceneManager::ChangeScene(SceneManager::SCENE::MAIN);
 	}
