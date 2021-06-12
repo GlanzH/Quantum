@@ -21,9 +21,7 @@ void PlayerCamera::Init()
 	GraphicsDevice.SetCamera(camera);
 }
 
-void PlayerCamera::Update()
+void PlayerCamera::Draw3D()
 {
-	
-
 	GraphicsDevice.SetCamera(camera);
 }

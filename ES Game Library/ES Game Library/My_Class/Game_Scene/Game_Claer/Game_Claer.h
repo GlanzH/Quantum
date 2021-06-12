@@ -8,8 +8,9 @@ public:
 	virtual ~Game_Claer() {};
 
 	virtual void Initialize()override;
-	virtual void Update()override;
-	virtual void Draw()override;
+	virtual void Update()    override;
+	virtual void Draw()      override;
+	virtual void Draw3D() {};
 
 	virtual void DrawEnd() {};
 private:

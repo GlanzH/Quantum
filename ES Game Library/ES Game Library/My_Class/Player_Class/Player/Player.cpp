@@ -9,22 +9,25 @@ void Player::Initialize()
 	//プレイヤー状態などの初期化
 	Character_State();
 //------------------------------------------------------------
-	//GraphicsDevice.SetRenderState(CullMode_None);
+	GraphicsDevice.SetRenderState(CullMode_None);
 
 	/*camera->SetView(Vector3(30, 10, 110), Vector3(0, 0, 0));
 	camera->SetPerspectiveFieldOfView(45.0f, 16.0f / 9.0f, 1.0f, 10000.0f);*/
 
 	/*GraphicsDevice.SetCamera(camera);*/
-	/*Material material;
-	material.Diffuse = Color(1.0f, 0.0f, 0.0f);
-	material.Ambient = Color(5.0f, 5.0f, 5.0f);
-	material.Specular = Color(1.0f, 0.0f, 0.0f);
-	material.Power = 10.0f;*/
+	Material material;
+	material.Diffuse = Color(Vector3_One);
+	material.Ambient = Color(Vector3_One);
+	material.Specular = Color(Vector3_One);
+	material.Power = 10.0f;
+	Character->SetMaterial(material);
 
-	/*Character->SetPosition(Vector3(0, 0, 0));
-	Character->SetScale(0.01f);
+	Character->SetPosition(Vector3(0, 0, 0.2f));
+	Character->SetScale(0.1f);
 
-	Character->Rotation(0.0f, 180.0f, 0.0f);*/
+	Character->Rotation(0.0f, 180.0f, 0.0f);
+
+	
 
 	/*Light light;
 	light.Type = Light_Directional;
@@ -52,8 +55,8 @@ void Player::Initialize()
 void Player::Character_State()
 {
 	
-	Move = 10.0f;
 }
+
 void Player::Update()
 {
 	//操作キーなどの記述
@@ -72,7 +75,7 @@ void Player::Draw3D()
 
 
 
-	/*Character->Draw();*/
+	Character->Draw();
 	/*attck.Draw();*/
 }
 
@@ -104,15 +107,13 @@ void Player::Character_Move()
 void Player::Player_Operation()
 {
 	//カーソルキー ←→ を押したら移動移動
-	/*Vector3 Character_position = Character->GetPosition();*/
 	if (Input.GetKeybordInput(Keys_Right))
 	{
-		
-		
+		Character->Move(-speed, 0, 0);
 	}
 	if (Input.GetKeybordInput(Keys_Left))
 	{
-		
+		Character->Move( speed, 0, 0);
 	}
 	// カーソルキーの↑を押していて、地面についていたらジャンプ
 	if (Input.GetKeybordInput(Keys_Up))
@@ -121,11 +122,11 @@ void Player::Player_Operation()
 		
 	}
 	//スペースキーを押したら封印の御札発射
-	if (Input.GetKeybordInputDown(Keys_Space) || Input.GetKeybordInput(Keys_Space))
+	if (Input.GetKeybordInputDown(Keys_Space))
 	{
 	}
  
-	
+	PlayerPosition = Character->GetPosition();
 }
 
     

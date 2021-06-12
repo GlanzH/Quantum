@@ -3,6 +3,7 @@
 #include"../../Player_Class/Player/Player.h"
 #include"../../All_Enemy/Enemy_Base/Enemy_Base.h"
 #include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
+#include"../../Camera_Class/PlayerCamera.h"
 
 class Main_Scene : public BaseScene
 {
@@ -11,8 +12,9 @@ public:
 	virtual ~Main_Scene() {};
 
 	virtual void Initialize()override;
-	virtual void Update()override;
-	virtual void Draw()override;
+	virtual void Update()    override;
+	virtual void Draw()      override;
+	virtual void Draw3D()    override;
 
 	virtual void DrawEnd() {};
 private:
@@ -23,7 +25,8 @@ private:
 	float Main_x;
 	float Main2_x;
 	float Main3_x;
-     //Player player;//
+	PlayerCamera camera;
+    Player player;
 	//Enemy_Manager enemy_manager;
 	MUSIC  BGM;
 };

@@ -19,6 +19,7 @@ public:
    static void ChangeScene(SCENE scene);
    static void Update();
    static void Draw();
+   static void Draw3D();
    static void DrawEnd();
 
    static  BaseScene* m_pScene;

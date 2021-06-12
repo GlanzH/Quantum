@@ -6,10 +6,10 @@ class PlayerCamera
 {
 public:
 	PlayerCamera() {};
-	virtual ~PlayerCamera() {};
+	~PlayerCamera() {};
 
-	virtual void Init();
-	virtual void Update();
+	void Init();
+	void Draw3D();
 	
 	CAMERA Getcamera() const{ return camera; };
 	Light  GetLight()  const { return light; };
@@ -19,7 +19,6 @@ public:
 private:
 	CAMERA camera;
 	Light   light;
-
 
 	float cameraPos;
 };
