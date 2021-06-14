@@ -29,7 +29,7 @@ private:
 	MODEL Character;//キャラクターのモデル
 	Vector3 PlayerPosition;//キャラクターの座標
 	const float speed = 0.002f;//速度の固定化
-	/*CAMERA camera;*/
+
 	//FONT DefaultFont;
 	//Player_Attck attck;//Player_Attckクラスへのアクセス
 };
