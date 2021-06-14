@@ -41,6 +41,9 @@ void SceneManager::Draw()
 {
 	m_pScene->Draw();
 }
+void SceneManager::Draw3D() {
+	m_pScene->Draw3D();
+}
 void SceneManager::DrawEnd()
 {
 	m_pScene->DrawEnd();

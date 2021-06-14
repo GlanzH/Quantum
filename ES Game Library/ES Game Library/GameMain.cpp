@@ -51,7 +51,7 @@ void GameMain::Draw()
 	GraphicsDevice.Clear(Color_CornflowerBlue);
 
 	GraphicsDevice.BeginScene();
-
+	scenemanager->Draw3D();
 
 	SpriteBatch.Begin();
 	scenemanager->Draw();
