@@ -4,17 +4,13 @@
 class Map
 {
 public:
-	MyClass();
-	~MyClass();
-
+	Map() {};
+	~Map() {};
+	virtual void Initialize();
+	virtual void Update();
+	virtual void Draw();
 private:
-
+	MODEL Road;
+	MODEL Pillar;
+	MODEL Side;
 };
-
-MyClass::MyClass()
-{
-}
-
-MyClass::~MyClass()
-{
-}
