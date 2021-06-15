@@ -29,6 +29,7 @@ void Map::Initialize()
 
 void Map::Update()
 {
+
 }
 
 void Map::Draw()

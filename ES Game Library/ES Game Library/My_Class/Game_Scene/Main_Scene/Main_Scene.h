@@ -4,6 +4,7 @@
 #include"../../All_Enemy/Enemy_Base/Enemy_Base.h"
 #include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
 #include"../../Camera_Class/PlayerCamera.h"
+#include"../../Map_Class/Map.h"
 
 class Main_Scene : public BaseScene
 {
@@ -25,8 +26,9 @@ private:
 	float Main_x;
 	float Main2_x;
 	float Main3_x;
-	PlayerCamera camera;
-    Player player;
+	Map map;
+	/*PlayerCamera camera;
+    Player player;*/
 	//Enemy_Manager enemy_manager;
 	MUSIC  BGM;
 };
