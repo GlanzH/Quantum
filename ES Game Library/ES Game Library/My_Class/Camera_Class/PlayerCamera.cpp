@@ -17,6 +17,8 @@ void PlayerCamera::Init()
 
 	camera->SetPerspectiveFieldOfView(cameraPos, 16.0f / 9.0f, 0.1f, 100.0f);
 
+	camera->SetPosition(Player::Instance().GetPlayerPosition() - Vector3(0,0,-10));
+
 	GraphicsDevice.SetLight(light);
 	GraphicsDevice.SetCamera(camera);
 }

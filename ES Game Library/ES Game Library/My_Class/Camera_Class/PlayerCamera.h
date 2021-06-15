@@ -1,6 +1,6 @@
 #pragma once
 #include"../../ESGLib.h"
-
+#include "../Player_Class/Player/Player.h"
 
 class PlayerCamera
 {
@@ -19,7 +19,6 @@ public:
 private:
 	CAMERA camera;
 	Light   light;
-
 	float cameraPos;
 };
 

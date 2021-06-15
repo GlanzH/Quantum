@@ -18,6 +18,12 @@ public:
 	virtual void Update();     //Playerの更新のクラス
 	virtual void Draw3D();       //Playerの描画のクラス
 	Vector3 GetPlayerPosition() { return PlayerPosition; }
+
+	static Player Instance() {
+		Player instance;
+		return instance;
+	}
+
 private:
 	//-----------------------------------------------------------------
 	//◆変数
