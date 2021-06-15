@@ -27,8 +27,8 @@ private:
 	float Main2_x;
 	float Main3_x;
 	Map map;
-	/*PlayerCamera camera;
-    Player player;*/
+	PlayerCamera camera;
+    Player player;
 	//Enemy_Manager enemy_manager;
 	MUSIC  BGM;
 };

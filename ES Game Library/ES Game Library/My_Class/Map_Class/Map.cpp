@@ -12,15 +12,15 @@ void Map::Initialize()
 	material.Specular = Color(1.0f, 0.0f, 0.0f);
 	material.Power = 10.0f;
 	Road->SetMaterial(material);
-	Pillar->SetMaterial(material);
-	Side->SetMaterial(material);
+	/*Pillar->SetMaterial(material);
+	Side->SetMaterial(material);*/
 	Road->GetFrontVector();
-	Pillar->GetFrontVector();
-	Side->GetFrontVector();
+	/*Pillar->GetFrontVector();
+	Side->GetFrontVector();*/
 	Road->GetUpVector();
-	Pillar->GetUpVector();
-	Side->GetUpVector();
-
+	/*Pillar->GetUpVector();
+	Side->GetUpVector();*/
+	Road->SetPosition(0, -1, 0);
 
 
 
@@ -36,10 +36,10 @@ void Map::Draw()
 {
 	GraphicsDevice.BeginAlphaBlend();
 	Road->DrawAlpha(0.5f);
-	Pillar->DrawAlpha(0.5f);
-	Side->DrawAlpha(0.5f);
+	//Pillar->DrawAlpha(0.5f);
+	//Side->DrawAlpha(0.5f);
 	GraphicsDevice.EndAlphaBlend();
 	Road->Draw();
-	Pillar->Draw();
-	Side->Draw();
+	/*Pillar->Draw();
+	Side->Draw();*/
 }

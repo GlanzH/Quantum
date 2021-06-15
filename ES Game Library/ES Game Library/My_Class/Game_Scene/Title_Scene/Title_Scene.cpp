@@ -14,7 +14,7 @@ void Title_Scene::Update()
 	Blinking += 0.01;
 	GamePadState pad = GamePad(0)->GetState();
 	GamePadBuffer pad_buffer = GamePad(0)->GetBuffer();
-	if (Input.GetKeybordInputDown(Keys_Enter)/*||Input.GetPadInputDown()*/)
+	if (Input.GetKeybordInputDown(Keys_Enter)/*||Input.GetPadInputDown(GamePad_Button2)*/)
 	{
 			SceneManager::ChangeScene(SceneManager::SCENE::MAIN);
 	}

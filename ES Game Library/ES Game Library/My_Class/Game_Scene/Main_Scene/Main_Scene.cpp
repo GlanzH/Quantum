@@ -10,8 +10,8 @@ void Main_Scene::Initialize()
 	Main_Secoud = GraphicsDevice.CreateSpriteFromFile(_T("Game_Scene/Stage.png"));
     Main_Third = GraphicsDevice.CreateSpriteFromFile(_T("Game_Scene/Stage.png"));
 	BGM = SoundDevice.CreateMusicFromFile(_T("Fear_2.wav"));
-	/*player.Initialize();
-	camera.Init();*/
+	player.Initialize();
+	camera.Init();
 	map.Initialize();
 	Main_x = 0.0f;
 	Main2_x = Main_x + 1280.0f;
@@ -46,7 +46,7 @@ void Main_Scene::Update()
 		SceneManager::ChangeScene(SceneManager::SCENE::OVER_SCENE);
 		return;
 	}
-	/*player.Update();*/
+	player.Update();
 	
 
 	//enemy_manager.Update();//
@@ -59,7 +59,7 @@ void Main_Scene::Draw()
 	//enemy_manager.Draw();
 }
 void Main_Scene::Draw3D() {
-	/*player.Draw3D();
-	camera.Draw3D();*/
+	player.Draw3D();
+	camera.Draw3D();
 	map.Draw();
 }
