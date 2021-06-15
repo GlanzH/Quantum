@@ -118,7 +118,7 @@ void Player::Player_Operation()
 	// カーソルキーの↑を押していて、地面についていたらジャンプ
 	if (Input.GetKeybordInput(Keys_Up))
 	{
-		
+		Character->Move(0, 0, -speed);
 		
 	}
 	//スペースキーを押したら封印の御札発射

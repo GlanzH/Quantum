@@ -61,5 +61,5 @@ void Main_Scene::Draw()
 void Main_Scene::Draw3D() {
 	player.Draw3D();
 	camera.Draw3D();
-	map.Draw();
+	map.Draw3D();
 }
