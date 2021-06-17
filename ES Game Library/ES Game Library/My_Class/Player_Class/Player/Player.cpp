@@ -23,7 +23,7 @@ void Player::Initialize()
 	Character->SetMaterial(material);
 
 	Character->SetPosition(Vector3(0, 0, 0.2f));
-	Character->SetScale(0.1f);
+	Character->SetScale(0.2f);
 
 	Character->Rotation(0.0f, 180.0f, 0.0f);
 
@@ -96,8 +96,13 @@ void Player::Player_Operation()
 	// カーソルキーの↑を押していて、地面についていたらジャンプ
 	if (Input.GetKeybordInput(Keys_Up))
 	{
+		Character->Move(0, 0, -Speed);
 		
-		
+	}
+	if (Input.GetKeybordInput(Keys_Down))
+	{
+		Character->Move(0, 0, Speed);
+
 	}
 	//スペースキーを押したら封印の御札発射
 	if (Input.GetKeybordInputDown(Keys_Space))
@@ -107,15 +112,24 @@ void Player::Player_Operation()
 	PlayerPosition = Character->GetPosition();
 }
 
-MODEL Player::GetModel() {
+MODEL   Player::GetModel() {
 	assert(Character && "Player::GetModel() - Character ptr nullptr");
 	return Character;
 }
 
-Vector3 Player::GetPlayerPosition() {
+Vector3 Player::GetPosition() {
 	assert(PlayerPosition && "Player::GetPlayerPosition() - PlayerPosition ptr nullptr");
 		return PlayerPosition;
 }
+
+Vector3 Player::GetUpVector() {
+	assert(UpVector && "layer::GetUpVector() - Character ptr nullptr");
+	if(Character != nullptr)
+	UpVector = Character->GetUpVector();
+	return UpVector;
+}
+
+
 	
 	
 	

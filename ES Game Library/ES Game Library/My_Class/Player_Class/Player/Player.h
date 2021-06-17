@@ -18,12 +18,13 @@ public:
 	void Initialize(); //Playerの初期化のクラス
 	void Update();     //Playerの更新のクラス
 	void Draw3D();       //Playerの描画のクラス
-	Vector3 GetPlayerPosition();
+	Vector3 GetPosition();
 	MODEL   GetModel();
-	MODEL   GetCollision();
+	Vector3 GetUpVector();
+	//MODEL   GetCollision();
 
 	static Player& Instance() {
-		Player instance;
+		static Player instance;
 		return instance;
 	}
 
@@ -38,6 +39,7 @@ private:
 	MODEL Character;//キャラクターのモデル
 	MODEL Collision;
 	Vector3 PlayerPosition;//キャラクターの座標
+	Vector3 UpVector;
 	const float Speed = 0.002f;//速度の固定化
 	/*CAMERA camera;*/
 	//FONT DefaultFont;

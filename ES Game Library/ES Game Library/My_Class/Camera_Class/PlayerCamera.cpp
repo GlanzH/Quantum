@@ -2,6 +2,7 @@
 
 void PlayerCamera::Init()
 {
+
 	Color color = (0.5f, 0.5f, 0.5f);
 
 	light.Type = Light_Directional;
@@ -33,11 +34,9 @@ void PlayerCamera::Init()
 
 void PlayerCamera::Draw3D()
 {
-//	camera->SetLookAt(player->GetPosition() + Vector3_Backward * 5 + Vector3(0.0f, 7.0f, 0.0f), player->GetPosition() + player->GetUpVector(), Vector3_Up);
-//	GraphicsDevice.SetCamera(camera);
-	auto player_pos = Player::Instance().GetPlayerPosition();
+	auto player_pos    = Player::Instance().GetPosition();
+	auto player_up_vec = Player::Instance().GetUpVector();
 
-	auto unko = player_pos;
-	auto fuck = player_pos;
-	auto shit = player->GetUpVector();
+	camera->SetLookAt(player_pos + Vector3_Backward + Vector3(0.0f, 0.1f, -0.5f), player_pos + player_up_vec, Vector3_Up);
+	GraphicsDevice.SetCamera(camera);
 }

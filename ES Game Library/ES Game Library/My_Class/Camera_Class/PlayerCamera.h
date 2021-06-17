@@ -23,6 +23,6 @@ private:
 	float cameraPos;
 	const float speed = 0.002f;
 	MODEL player;
-	enum { CAMERA_POS = 30 };
+	enum { CAMERA_POS = 15 };
 };
 
