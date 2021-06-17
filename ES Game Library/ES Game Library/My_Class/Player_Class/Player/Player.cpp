@@ -56,10 +56,10 @@ void Player::Draw3D()
 
 void Player::Charactor_Move()
 {
-	//ジャンプ処理
+	
 	//活動制限(範囲)
-	/*PlayerPosition.x = (PlayerPosition.x, 0.0f, 1280.0f - 63.0f);
-	PlayerPosition.y = (PlayerPosition.y, 0.0f, 720.0f - 102.0f);*/
+	PlayerPosition.x = (PlayerPosition.x, 0.0f, 1280.0f - 63.0f);
+
 	/*if (Character_x <= -60.0f)
 	{
 		Character_x = -60.0f;
@@ -87,11 +87,11 @@ void Player::Player_Operation()
 		Charactor->Move( Speed, 0, 0);
 	
 	// カーソルキーの↑を押していて、地面についていたらジャンプ
-	if (Input.GetKeybordInput(Keys_Up))
+	/*if (Input.GetKeybordInput(Keys_Up))
 		Charactor->Move(0, 0, -Speed);
 		
 	if (Input.GetKeybordInput(Keys_Down))
-		Charactor->Move(0, 0, Speed);
+		Charactor->Move(0, 0, Speed);*/
 
 	//スペースキーを押したら封印の御札発射
 	if (Input.GetKeybordInputDown(Keys_Space))
@@ -113,12 +113,6 @@ Vector3 Player::GetPosition() {
 		return PlayerPosition;
 }
 
-Vector3 Player::GetUpVector() {
-	assert(UpVector && "Player::GetUpVector() - UpVector ptr nullptr");
-	if(Charactor != nullptr)
-	UpVector = Charactor->GetUpVector();
-	return UpVector;
-}
 
 
 	
