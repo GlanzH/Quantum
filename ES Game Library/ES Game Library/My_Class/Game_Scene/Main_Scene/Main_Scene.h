@@ -20,12 +20,9 @@ public:
 	virtual void DrawEnd() {};
 private:
 
-	SPRITE Main;
-	SPRITE Main_Secoud;
-	SPRITE Main_Third;
-	float Main_x;
-	float Main2_x;
-	float Main3_x;
+	
+
+	MEDIA media;
 	Map map;
 	PlayerCamera camera;
     Player player;
