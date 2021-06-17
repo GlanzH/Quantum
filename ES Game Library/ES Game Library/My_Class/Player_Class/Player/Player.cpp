@@ -1,36 +1,38 @@
 #include"Player.h"
 #include <cassert>
+#include <algorithm>
 
 Player::Player() {
-	Character = nullptr;
+	Charactor = nullptr;
 }
 
 void Player::Initialize()
 {
-	if(Character == nullptr)
-	Character = GraphicsDevice.CreateModelFromFile(_T("Player/player_car.x"));
+	if(Charactor == nullptr)
+	Charactor = GraphicsDevice.CreateModelFromFile(_T("Player/player_car.x"));
 
 	//プレイヤー状態などの初期化
-	Character_State();
+	Charactor_State();
 
 	GraphicsDevice.SetRenderState(CullMode_None);
 
 	Material material;
-	material.Diffuse  = Color(1.0f,1.0f,1.0f);
-	material.Ambient  = Color(1.0f,1.0f,1.0f);
-	material.Specular = Color(1.0f,1.0f,1.0f);
-	material.Power = 10.0f;
-	Character->SetMaterial(material);
+	material.Emissive = Color(1.0f, 1.0f, 1.0f);
+	material.Diffuse   = Color(1.0f,1.0f,1.0f);
+	material.Ambient   = Color(0.5f,0.5f,0.5f);
+	material.Specular  = Color(1.0f,1.0f,1.0f);
+	material.Power     = 10.0f;
+	Charactor->SetMaterial(material);
 
-	Character->SetPosition(Vector3(0, 0, 0.2f));
-	Character->SetScale(0.2f);
+	Charactor->SetPosition(CharactorInitPos);
+	Charactor->SetScale(1.f);
 
-	Character->Rotation(0.0f, 180.0f, 0.0f);
+	Charactor->Rotation(CharactorRotate);
 
 	/*attck.Initialize();*/
 
 }
-void Player::Character_State()
+void Player::Charactor_State()
 {
 	
 }
@@ -40,25 +42,19 @@ void Player::Update()
 	//操作キーなどの記述
 	Player_Operation();
 	//ジャンプなどの記述
-	Character_Move();
+	Charactor_Move();
 
 	/*attck.Update();*/
 	
 }
 void Player::Draw3D()
 {
-	/*const Vector3 player_position = Character->GetPosition();*/
-	/*camera->SetLookAt(player_position - Character->GetFrontVector() * 15.0f + Vector3(0, 2, 0), player_position, Vector3_Up);*/
-	/*GraphicsDevice.SetCamera(camera);*/
-
-
-
-	Character->Draw();
+	Charactor->Draw();
 	/*attck.Draw();*/
 }
 
 
-void Player::Character_Move()
+void Player::Charactor_Move()
 {
 	//ジャンプ処理
 	//活動制限(範囲)
@@ -84,37 +80,32 @@ void Player::Character_Move()
 
 void Player::Player_Operation()
 {
-	//カーソルキー ←→ を押したら移動移動
 	if (Input.GetKeybordInput(Keys_Right))
-	{
-		Character->Move(-Speed, 0, 0);
-	}
+		Charactor->Move(-Speed, 0, 0);
+	
 	if (Input.GetKeybordInput(Keys_Left))
-	{
-		Character->Move( Speed, 0, 0);
-	}
+		Charactor->Move( Speed, 0, 0);
+	
 	// カーソルキーの↑を押していて、地面についていたらジャンプ
 	if (Input.GetKeybordInput(Keys_Up))
-	{
-		Character->Move(0, 0, -Speed);
+		Charactor->Move(0, 0, -Speed);
 		
-	}
 	if (Input.GetKeybordInput(Keys_Down))
-	{
-		Character->Move(0, 0, Speed);
+		Charactor->Move(0, 0, Speed);
 
-	}
 	//スペースキーを押したら封印の御札発射
 	if (Input.GetKeybordInputDown(Keys_Space))
 	{
+
 	}
  
-	PlayerPosition = Character->GetPosition();
+	
+	PlayerPosition = Charactor->GetPosition();
 }
 
 MODEL   Player::GetModel() {
-	assert(Character && "Player::GetModel() - Character ptr nullptr");
-	return Character;
+	assert(Charactor && "Player::GetModel() - Charactor ptr nullptr");
+	return Charactor;
 }
 
 Vector3 Player::GetPosition() {
@@ -123,9 +114,9 @@ Vector3 Player::GetPosition() {
 }
 
 Vector3 Player::GetUpVector() {
-	assert(UpVector && "layer::GetUpVector() - Character ptr nullptr");
-	if(Character != nullptr)
-	UpVector = Character->GetUpVector();
+	assert(UpVector && "Player::GetUpVector() - UpVector ptr nullptr");
+	if(Charactor != nullptr)
+	UpVector = Charactor->GetUpVector();
 	return UpVector;
 }
 

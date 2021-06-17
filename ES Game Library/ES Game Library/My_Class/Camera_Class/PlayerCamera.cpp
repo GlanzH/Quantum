@@ -10,14 +10,15 @@ void PlayerCamera::Init()
 	light.Diffuse = color;
 	light.Ambient = color;
 	light.Specular = color;
-	light.Position = Vector3(0, 10, 0);
+	light.Position = light_pos;
 
-	cameraPos = CAMERA_POS;
+	camera_pos = CAMERA_POS;
 
 	camera->SetView(Vector3_Zero, Vector3_Zero);
-	camera->SetPerspectiveFieldOfView(cameraPos, 16.0f / 9.0f, 0.1f, 100.0f);
-	camera->SetRotation(5.0f, 0.0f, 0.0f);
-	camera->SetPosition(0, 0.04f, 0);
+	camera->SetPerspectiveFieldOfView(camera_pos, 16.0f / 9.0f, 0.1f, 100.0f);
+	camera->SetRotation(camera_rotate);
+	camera->SetPosition(camera_init_pos);
+
 	GraphicsDevice.SetLight(light);
 	GraphicsDevice.SetCamera(camera);
 }
@@ -35,8 +36,7 @@ void PlayerCamera::Init()
 void PlayerCamera::Draw3D()
 {
 	auto player_pos    = Player::Instance().GetPosition();
-	auto player_up_vec = Player::Instance().GetUpVector();
 
-	camera->SetLookAt(player_pos + Vector3_Backward + Vector3(0.0f, 0.1f, -0.5f), player_pos + player_up_vec, Vector3_Up);
+	camera->SetLookAt(player_pos + Vector3_Backward + camera_y, player_pos + camera_z, Vector3_Up);
 	GraphicsDevice.SetCamera(camera);
 }
