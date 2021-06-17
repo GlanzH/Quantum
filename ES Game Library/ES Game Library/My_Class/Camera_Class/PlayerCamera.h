@@ -9,6 +9,7 @@ public:
 	~PlayerCamera() {};
 
 	void Init();
+	//void Update();
 	void Draw3D();
 	
 	CAMERA Getcamera() const{ return camera; };
@@ -20,5 +21,8 @@ private:
 	CAMERA camera;
 	Light   light;
 	float cameraPos;
+	const float speed = 0.002f;
+	MODEL player;
+	enum { CAMERA_POS = 30 };
 };
 

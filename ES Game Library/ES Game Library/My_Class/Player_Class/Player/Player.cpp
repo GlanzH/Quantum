@@ -1,24 +1,24 @@
 #include"Player.h"
+#include <cassert>
 
+Player::Player() {
+	Character = nullptr;
+}
 
 void Player::Initialize()
 {
-	//キャラクター描画
+	if(Character == nullptr)
 	Character = GraphicsDevice.CreateModelFromFile(_T("Player/player_car.x"));
-	
+
 	//プレイヤー状態などの初期化
 	Character_State();
-//------------------------------------------------------------
+
 	GraphicsDevice.SetRenderState(CullMode_None);
 
-	/*camera->SetView(Vector3(30, 10, 110), Vector3(0, 0, 0));
-	camera->SetPerspectiveFieldOfView(45.0f, 16.0f / 9.0f, 1.0f, 10000.0f);*/
-
-	/*GraphicsDevice.SetCamera(camera);*/
 	Material material;
-	material.Diffuse = Color(Vector3_One);
-	material.Ambient = Color(Vector3_One);
-	material.Specular = Color(Vector3_One);
+	material.Diffuse  = Color(1.0f,1.0f,1.0f);
+	material.Ambient  = Color(1.0f,1.0f,1.0f);
+	material.Specular = Color(1.0f,1.0f,1.0f);
 	material.Power = 10.0f;
 	Character->SetMaterial(material);
 
@@ -26,28 +26,6 @@ void Player::Initialize()
 	Character->SetScale(0.1f);
 
 	Character->Rotation(0.0f, 180.0f, 0.0f);
-
-	
-
-	/*Light light;
-	light.Type = Light_Directional;
-	light.Direction = Vector3(0.0f, -1.0f, 1.0f);
-	light.Diffuse = Color(1.0f, 1.0f, 1.0f);
-	light.Ambient = Color(5.0f, 5.0f, 5.0f);
-	light.Specular = Color(1.0f, 1.0f, 1.0f);
-	GraphicsDevice.SetLight(light);*/
-
-	/*camera->GetRightVector();*/
-
-	//camera->GetFrontVector();
-	//座標の指定の仕方
-
-	/*Vector3(30, 0, 130);
-	camera->GetPosition();
-	camera->GetPosition() + Vector3(30, 0, 130);*/
-
-
-
 
 	/*attck.Initialize();*/
 
@@ -109,11 +87,11 @@ void Player::Player_Operation()
 	//カーソルキー ←→ を押したら移動移動
 	if (Input.GetKeybordInput(Keys_Right))
 	{
-		Character->Move(-speed, 0, 0);
+		Character->Move(-Speed, 0, 0);
 	}
 	if (Input.GetKeybordInput(Keys_Left))
 	{
-		Character->Move( speed, 0, 0);
+		Character->Move( Speed, 0, 0);
 	}
 	// カーソルキーの↑を押していて、地面についていたらジャンプ
 	if (Input.GetKeybordInput(Keys_Up))
@@ -129,7 +107,15 @@ void Player::Player_Operation()
 	PlayerPosition = Character->GetPosition();
 }
 
-    
+MODEL Player::GetModel() {
+	assert(Character && "Player::GetModel() - Character ptr nullptr");
+	return Character;
+}
+
+Vector3 Player::GetPlayerPosition() {
+	assert(PlayerPosition && "Player::GetPlayerPosition() - PlayerPosition ptr nullptr");
+		return PlayerPosition;
+}
 	
 	
 	
