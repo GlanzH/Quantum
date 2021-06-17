@@ -145,9 +145,6 @@
     <Filter Include="ALL_Class\Player_Class">
       <UniqueIdentifier>{8d3f194a-3599-40a6-ab71-4d60918d5d26}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ALL_Class\Player_Class\Player_Attck">
-      <UniqueIdentifier>{58296d46-785f-46b7-9091-dfd0fd3e2b94}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ALL_Class\Player_Class\Player">
       <UniqueIdentifier>{5a042fa4-879a-4b79-a2f3-dbdacd782259}</UniqueIdentifier>
     </Filter>
@@ -192,6 +189,12 @@
     </Filter>
     <Filter Include="ALL_Class\Map_Class">
       <UniqueIdentifier>{24e42362-06e1-45fc-a5de-8320ed7eacae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Player_Class\Player\PlayerShotManager">
+      <UniqueIdentifier>{f85910f3-79de-4c08-8921-5e591d0de0bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot">
+      <UniqueIdentifier>{f0a16f05-7093-44c8-856f-0be06950582d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -361,9 +364,6 @@
     <ClCompile Include="My_Class\Player_Class\Player\Player.cpp">
       <Filter>ALL_Class\Player_Class\Player</Filter>
     </ClCompile>
-    <ClCompile Include="My_Class\Player_Class\Player_Attck\Player_Attck.cpp">
-      <Filter>ALL_Class\Player_Class\Player_Attck</Filter>
-    </ClCompile>
     <ClCompile Include="My_Class\Mediator_Class\Mediator\Mediator.cpp">
       <Filter>ALL_Class\Mediator_Class\Mediator</Filter>
     </ClCompile>
@@ -393,6 +393,12 @@
     </ClCompile>
     <ClCompile Include="My_Class\Camera_Class\PlayerCamera.cpp">
       <Filter>ALL_Class\Camera_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShotManager.cpp">
+      <Filter>ALL_Class\Player_Class\Player\PlayerShotManager</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.cpp">
+      <Filter>ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -580,9 +586,6 @@
     <ClInclude Include="My_Class\Player_Class\Player\Player.h">
       <Filter>ALL_Class\Player_Class\Player</Filter>
     </ClInclude>
-    <ClInclude Include="My_Class\Player_Class\Player_Attck\Player_Attck.h">
-      <Filter>ALL_Class\Player_Class\Player_Attck</Filter>
-    </ClInclude>
     <ClInclude Include="My_Class\Mediator_Class\Mediator\Mediator.h">
       <Filter>ALL_Class\Mediator_Class\Mediator</Filter>
     </ClInclude>
@@ -612,6 +615,12 @@
     </ClInclude>
     <ClInclude Include="My_Class\Camera_Class\PlayerCamera.h">
       <Filter>ALL_Class\Camera_Class</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShotManager.h">
+      <Filter>ALL_Class\Player_Class\Player\PlayerShotManager</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.h">
+      <Filter>ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
