@@ -9,18 +9,22 @@ class Player
 //private:
 //	CollisionMediator* m_Mediator;
 public:
-	
-public:
+
 	//-----------------------------------------------------------------
 	//◆クラス
 	//-----------------------------------------------------------------
-	virtual void Initialize(); //Playerの初期化のクラス
-	virtual void Update();     //Playerの更新のクラス
-	virtual void Draw3D();       //Playerの描画のクラス
-	Vector3 GetPlayerPosition() { return PlayerPosition; }
+	Player::Player();
 
-	static Player Instance() {
-		Player instance;
+	void Initialize(); //Playerの初期化のクラス
+	void Update();     //Playerの更新のクラス
+	void Draw3D();       //Playerの描画のクラス
+	Vector3 GetPosition();
+	MODEL   GetModel();
+	Vector3 GetUpVector();
+	//MODEL   GetCollision();
+
+	static Player& Instance() {
+		static Player instance;
 		return instance;
 	}
 
@@ -28,13 +32,19 @@ private:
 	//-----------------------------------------------------------------
 	//◆変数
 	//-----------------------------------------------------------------
-	void Character_State();    //プレイヤーの状態
-	void Character_Move();     //移動状態
+	void Charactor_Move();     //移動状態
+	void Charactor_State();    //プレイヤーの状態
 	void Player_Operation();   //移動するためのキーボード操作
 
-	MODEL Character;//キャラクターのモデル
-	Vector3 PlayerPosition;//キャラクターの座標
-	const float speed = 0.002f;//速度の固定化
+	MODEL Charactor;
+	MODEL Collision;
+	Vector3 PlayerPosition;
+	Vector3 UpVector;
+
+	const float Speed = 0.008f;
+
+	const Vector3 CharactorInitPos = Vector3(0, 0, 0.2f);
+	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);
 	/*CAMERA camera;*/
 	//FONT DefaultFont;
 	//Player_Attck attck;//Player_Attckクラスへのアクセス
