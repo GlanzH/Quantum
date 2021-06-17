@@ -101,7 +101,7 @@ void Player::Player_Operation()
 
 
 	if (Input.GetKeybordInput(Keys_Space))
-		_PlayerShotManager.Shot(PlayerPosition);
+		_PlayerShotManager.Shot(GetPlayerPosition());
 
 }
 
