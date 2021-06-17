@@ -19,13 +19,13 @@ public:
 
 	virtual void DrawEnd() {};
 private:
-
-	
-
-	MEDIA media;
+	SPRITE bg;
 	Map map;
 	PlayerCamera camera;
     Player player;
 	//Enemy_Manager enemy_manager;
-	MUSIC  BGM;
+	enum MagicNum
+	{
+		Zero = 0
+	};
 };

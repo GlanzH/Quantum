@@ -121,6 +121,11 @@ void Player::Player_Operation()
 		Character->Move(0, 0, -speed);
 		
 	}
+	if (Input.GetKeybordInput(Keys_Down))
+	{
+		Character->Move(0, 0, speed);
+
+	}
 	//スペースキーを押したら封印の御札発射
 	if (Input.GetKeybordInputDown(Keys_Space))
 	{

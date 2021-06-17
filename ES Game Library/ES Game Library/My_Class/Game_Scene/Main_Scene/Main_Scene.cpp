@@ -6,12 +6,12 @@
 
 void Main_Scene::Initialize()
 {
-	MediaManager.Attach(GraphicsDevice);
-	media = MediaManager.CreateMediaFromFile(_T("GameSceneMaterial/MainScene_Material/one.wmv"));
+	bg = GraphicsDevice.CreateSpriteFromFile(_T("GameSceneMaterial/MainScene_Material/Red.png"));
+	
 	player.Initialize();
 	camera.Init();
 	map.Initialize();
-	media->Play();
+	
 
 	//enemy_manager.Initialize();
 }
@@ -38,6 +38,7 @@ void Main_Scene::Update()
 void Main_Scene::Draw()
 {
 	//enemy_manager.Draw();
+	SpriteBatch.Draw(*bg,Vector3(Zero, Zero,10000));
 }
 void Main_Scene::Draw3D() {
 	player.Draw3D();
