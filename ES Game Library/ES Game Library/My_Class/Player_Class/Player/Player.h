@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include"../../../ESGLib.h"
 #include"../PlayerShotManager/PlayerShotManager.h"
 #include "../../Scene_Manegeer/BaseScene.h"
@@ -25,9 +25,9 @@ public:
 	}
 
 private:
-	void Charactor_Move();     //ˆÚ“®ó‘Ô
-	void Charactor_State();    //ƒvƒŒƒCƒ„[‚Ìó‘Ô
-	void Player_Operation();   //ˆÚ“®‚·‚é‚½‚ß‚ÌƒL[ƒ{[ƒh‘€ì
+	void Charactor_Move();     //ğŸ”¶ç§»å‹•çŠ¶æ…‹
+	void Charactor_State();    //ğŸ”¶ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹
+	void Player_Operation();   //ğŸ”¶ç§»å‹•ã™ã‚‹ãŸã‚ã®ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æ“ä½œ
 
 	MODEL Charactor;
 	MODEL Collision;
@@ -36,8 +36,12 @@ private:
 	//Vector3 
 
 	FONT font;
-
-	const float Speed = 0.008f;
+	//ğŸ”¶LEFT:RIGHT
+	const float Speed_LR = 0.01f;
+    //ğŸ”¶FORNT
+	const float Speed_F = 0.25f;
+	//ğŸ”¶BACK
+	const float Speed_B = 0.8f;
 
 	const Vector3 CharactorInitPos = Vector3(0, 0, 0.2f);
 	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);
