@@ -39,9 +39,9 @@ private:
 	//ŸLEFT:RIGHHT
 	const float Speed_LR = 0.008f;
 	//ŸFRONT
-	const float Speed_F = 0.5f;
+	const float Speed_F = 0.05f;
 	//ŸBACK
-	const float Speed_B = 0.9f;
+	const float Speed_B = 0.09f;
 
 	const Vector3 CharactorInitPos = Vector3(0, 0, 0.2f);
 	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);

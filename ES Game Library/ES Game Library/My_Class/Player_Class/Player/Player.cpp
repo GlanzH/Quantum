@@ -86,7 +86,7 @@ void Player::Charactor_Move()
 
 void Player::Player_Operation()
 {
-	Charactor->Move(0, 0, PlayerPosition.z = PlayerPosition.z + -Speed_F);
+	Charactor->Move(0, 0,  -Speed_F);
 
 
 	if (Input.GetKeybordInput(Keys_Right))
