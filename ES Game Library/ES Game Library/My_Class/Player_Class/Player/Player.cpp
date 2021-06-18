@@ -29,6 +29,8 @@ void Player::Initialize()
 
 	Charactor->Rotation(CharactorRotate);
 
+	PlayerPosition = GetPlayerPosition();
+
 	_PlayerShotManager.Initialize();
 }
 

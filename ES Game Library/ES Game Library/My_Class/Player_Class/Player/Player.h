@@ -32,7 +32,6 @@ private:
 	MODEL Charactor;
 	MODEL Collision;
 	Vector3 PlayerPosition = Vector3_Zero;
-
 	//Vector3 
 
 	FONT font;

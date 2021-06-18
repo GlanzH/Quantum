@@ -23,7 +23,7 @@ void PlayerCamera::Init()
 }
 
 void PlayerCamera::Update() {
-	player_pos = player.GetPlayerPosition();
+	player_pos = player->GetPlayerPosition();
 
 }
 
