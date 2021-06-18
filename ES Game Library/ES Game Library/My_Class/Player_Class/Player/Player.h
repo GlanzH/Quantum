@@ -20,7 +20,7 @@ public:
 	//MODEL   GetCollision();
 
 	static Player Instance() {
-		 Player instance;
+		Player instance;
 		return instance;
 	}
 

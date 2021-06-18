@@ -11,26 +11,27 @@ void Main_Scene::Initialize()
 	player.Initialize();
 	camera.Init();
 	map.Initialize();
-	
+	ui.Initialize();
 
 	//enemy_manager.Initialize();
 }
 void Main_Scene::Update()
 {
 
-	
-
 	if (Input.GetKeybordInputDown(Keys_Enter))
 	{
 		SceneManager::ChangeScene(SceneManager::SCENE::CLAER_SCENE);
 		return;
 	}
-	if (Input.GetKeybordInputDown(Keys_LeftShift))
+	if (Input.GetKeybordInputDown(Keys_LeftShift) || ui.GetTime() == 0)
 	{
 		SceneManager::ChangeScene(SceneManager::SCENE::OVER_SCENE);
 		return;
 	}
+
 	player.Update();
+	camera.Update();
+	ui.Update();
 
 	//enemy_manager.Update();//
 }
@@ -39,6 +40,7 @@ void Main_Scene::Draw()
 	//enemy_manager.Draw();
 	SpriteBatch.Draw(*bg,Vector3(Zero, Zero,10000));
 	player.Draw();
+	ui.Draw();
 }
 void Main_Scene::Draw3D() {
 	player.Draw3D();

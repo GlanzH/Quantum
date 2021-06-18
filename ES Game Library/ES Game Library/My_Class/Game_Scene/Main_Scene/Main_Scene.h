@@ -5,6 +5,7 @@
 #include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
 #include"../../Camera_Class/PlayerCamera.h"
 #include"../../Map_Class/Map.h"
+#include"../../UI_Class/UI.h"
 
 class Main_Scene : public BaseScene
 {
@@ -23,6 +24,7 @@ private:
 	Map map;
 	PlayerCamera camera;
     Player player;
+	UI ui;
 	//Enemy_Manager enemy_manager;
 	enum MagicNum
 	{

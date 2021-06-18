@@ -9,6 +9,7 @@ public:
 	~PlayerCamera() {};
 
 	void Init();
+	void Update();
 	void Draw3D();
 	
 	CAMERA Getcamera() const{ return camera; };
