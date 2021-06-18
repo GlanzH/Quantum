@@ -1,4 +1,5 @@
 #include"Player.h"
+#include"../../Map_Class/Map.h"
 #include <cassert>
 #include <algorithm>
 
