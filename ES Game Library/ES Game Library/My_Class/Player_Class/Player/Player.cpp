@@ -1,16 +1,15 @@
 #include"Player.h"
-#include"../../Map_Class/Map.h"
 #include <cassert>
 #include <algorithm>
 
 Player::Player() {
-	Charactor = nullptr;
+
 }
 
 void Player::Initialize()
 {
-	if(Charactor == nullptr)
 	Charactor = GraphicsDevice.CreateModelFromFile(_T("Player/player_car.x"));
+	font = GraphicsDevice.CreateSpriteFont(_T("游明朝"), 30);
 
 	//プレイヤー状態などの初期化
 	Charactor_State();
@@ -18,11 +17,11 @@ void Player::Initialize()
 	GraphicsDevice.SetRenderState(CullMode_None);
 
 	Material material;
-	material.Emissive = Color(1.0f, 1.0f, 1.0f);
-	material.Diffuse   = Color(1.0f,1.0f,1.0f);
-	material.Ambient   = Color(0.5f,0.5f,0.5f);
-	material.Specular  = Color(1.0f,1.0f,1.0f);
-	material.Power     = 10.0f;
+	material.Emissive  = Color(Vector3_One);
+	material.Diffuse   = Color(Vector3_One);
+	material.Ambient   = Color(Vector3_One / HALF);
+	material.Specular  = Color(Vector3_One);
+	material.Power     = material_power;
 	Charactor->SetMaterial(material);
 
 	Charactor->SetPosition(CharactorInitPos);
@@ -30,9 +29,9 @@ void Player::Initialize()
 
 	Charactor->Rotation(CharactorRotate);
 
-	/*attck.Initialize();*/
-
+	_PlayerShotManager.Initialize();
 }
+
 void Player::Charactor_State()
 {
 	
@@ -40,27 +39,33 @@ void Player::Charactor_State()
 
 void Player::Update()
 {
+	PlayerPosition = Charactor->GetPosition();
+	GetPlayerPosition();
+
 	//操作キーなどの記述
 	Player_Operation();
 	//ジャンプなどの記述
 	Charactor_Move();
 
-	/*attck.Update();*/
-	
+	GetPlayerPosition();
+
+	_PlayerShotManager.Update();
+		
 }
+
 void Player::Draw3D()
 {
 	Charactor->Draw();
-	/*attck.Draw();*/
+	_PlayerShotManager.Draw3D();
 }
 
 
 void Player::Charactor_Move()
 {
-	
+	//ジャンプ処理
 	//活動制限(範囲)
-	
-
+	/*PlayerPosition.x = (PlayerPosition.x, 0.0f, 1280.0f - 63.0f);
+	PlayerPosition.y = (PlayerPosition.y, 0.0f, 720.0f - 102.0f);*/
 	/*if (Character_x <= -60.0f)
 	{
 		Character_x = -60.0f;
@@ -87,36 +92,35 @@ void Player::Player_Operation()
 	if (Input.GetKeybordInput(Keys_Left))
 		Charactor->Move( Speed, 0, 0);
 	
-	// カーソルキーの↑を押していて、地面についていたらジャンプ
-	/*if (Input.GetKeybordInput(Keys_Up))
+
+	if (Input.GetKeybordInput(Keys_Up))
 		Charactor->Move(0, 0, -Speed);
 		
 	if (Input.GetKeybordInput(Keys_Down))
-		Charactor->Move(0, 0, Speed);*/
+		Charactor->Move(0, 0, Speed);
 
-	//スペースキーを押したら封印の御札発射
-	if (Input.GetKeybordInputDown(Keys_Space))
-	{
 
-	}
- 
-	
-	PlayerPosition = Charactor->GetPosition();
+	if (Input.GetKeybordInput(Keys_Space))
+		_PlayerShotManager.Shot(GetPlayerPosition());
+
 }
 
-MODEL   Player::GetModel() {
-	assert(Charactor && "Player::GetModel() - Charactor ptr nullptr");
+void Player::Draw() {
+	SpriteBatch.DrawString(font, Vector2(300,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
+	SpriteBatch.DrawString(font, Vector2(300,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
+	SpriteBatch.DrawString(font, Vector2(300,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
+}
+
+MODEL Player::GetModel() {
+	assert(Charactor && "Player::GetModel() -Charactor ptr nullptr");
 	return Charactor;
 }
 
-Vector3 Player::GetPosition() {
+
+Vector3 Player::GetPlayerPosition() {
 	assert(PlayerPosition && "Player::GetPlayerPosition() - PlayerPosition ptr nullptr");
 		return PlayerPosition;
 }
-
-
-
-	
 	
 	
 	

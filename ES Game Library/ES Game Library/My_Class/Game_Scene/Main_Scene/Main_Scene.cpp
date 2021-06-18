@@ -31,7 +31,6 @@ void Main_Scene::Update()
 		return;
 	}
 	player.Update();
-	
 
 	//enemy_manager.Update();//
 }
@@ -39,6 +38,7 @@ void Main_Scene::Draw()
 {
 	//enemy_manager.Draw();
 	SpriteBatch.Draw(*bg,Vector3(Zero, Zero,10000));
+	player.Draw();
 }
 void Main_Scene::Draw3D() {
 	player.Draw3D();
