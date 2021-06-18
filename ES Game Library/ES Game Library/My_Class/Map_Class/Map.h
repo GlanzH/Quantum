@@ -16,24 +16,23 @@ private:
 	std::vector<MODEL> model;
 	std::vector<std::vector<Vector3>> model_position;
 	std::vector<int>                  model_interval;
-	
 	const Vector3 road_pos   = Vector3(0.0f, -0.25f, 0.0f);
 	const Vector3 side_pos   = Vector3(0.0f, -8.0f, 0.0f);
 	const Vector3 pillar_pos = Vector3_Zero;
 	unique_ptr<Player>player_pos;
+
+	float Move;
+
 	enum Magic_Num
 	{
-	 //ŸŠÔŠu
-	 //
+	 //Ÿ“¹‚ÌŠÔŠu
 	 ROAD_INTERVAL = 17,
-	 //
+	 //Ÿ’Œ‚ÌŠÔŠu
 	 PILLAR_INTERVAL = 23,
-	 //
+	 //Ÿƒrƒ‹‚ÌŠÔŠu
 	 SIDE_INTERVAL = 60,
 	 //ŸˆÊ’u
 	 REMOVE_POS = 20
-	
-
 	};
 
 };
