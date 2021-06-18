@@ -300,6 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resource\DirectX.ico" />
+    <None Include="My_Class\Placement_Fille\ObjectPlacement.csv" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Resource\Resource.rc" />

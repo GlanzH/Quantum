@@ -196,6 +196,9 @@
     <Filter Include="ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot">
       <UniqueIdentifier>{f0a16f05-7093-44c8-856f-0be06950582d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Placement_Fille">
+      <UniqueIdentifier>{9eb842e3-2709-4cff-b687-0fbf37aab362}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -626,6 +629,9 @@
   <ItemGroup>
     <None Include="..\Resource\DirectX.ico">
       <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="My_Class\Placement_Fille\ObjectPlacement.csv">
+      <Filter>Placement_Fille</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

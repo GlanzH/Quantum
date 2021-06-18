@@ -18,5 +18,5 @@ private:
 	enum { HALF = 2 };
 	const float speed = 0.2f;
 	const float material_power = 10.0f;
-	const float shot_erace_pos = 10.0f;
+	const float shot_erace_pos = 1000.0f;
 };

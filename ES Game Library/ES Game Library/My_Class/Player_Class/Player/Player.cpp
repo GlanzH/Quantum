@@ -28,9 +28,6 @@ void Player::Initialize()
 	Charactor->SetScale(1.f);
 
 	Charactor->Rotation(CharactorRotate);
-
-	PlayerPosition = GetPlayerPosition();
-
 	_PlayerShotManager.Initialize();
 }
 
@@ -47,7 +44,7 @@ void Player::Update()
 	//操作キーなどの記述
 	Player_Operation();
 	//ジャンプなどの記述
-	Charactor_Move();
+	//Charactor_Move();
 
 	GetPlayerPosition();
 
@@ -88,18 +85,17 @@ void Player::Charactor_Move()
 
 void Player::Player_Operation()
 {
+	Charactor->Move(0, 0,  -Speed_F);
+
+
 	if (Input.GetKeybordInput(Keys_Right))
-		Charactor->Move(-Speed, 0, 0);
+		Charactor->Move(-Speed_LR, 0, 0);
 	
 	if (Input.GetKeybordInput(Keys_Left))
-		Charactor->Move( Speed, 0, 0);
-	
-
-	if (Input.GetKeybordInput(Keys_Up))
-		Charactor->Move(0, 0, -Speed);
+		Charactor->Move(Speed_LR, 0, 0);
 		
 	if (Input.GetKeybordInput(Keys_Down))
-		Charactor->Move(0, 0, Speed);
+		Charactor->Move(0, 0, Speed_B);
 
 
 	if (Input.GetKeybordInput(Keys_Space))
@@ -108,9 +104,9 @@ void Player::Player_Operation()
 }
 
 void Player::Draw() {
-	//SpriteBatch.DrawString(font, Vector2(600,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
-	//SpriteBatch.DrawString(font, Vector2(600,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
-	//SpriteBatch.DrawString(font, Vector2(600,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
+	SpriteBatch.DrawString(font, Vector2(300,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
+	SpriteBatch.DrawString(font, Vector2(300,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
+	SpriteBatch.DrawString(font, Vector2(300,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
 }
 
 MODEL Player::GetModel() {
