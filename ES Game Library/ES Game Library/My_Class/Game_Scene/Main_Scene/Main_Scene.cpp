@@ -3,6 +3,7 @@
 #include"../../Player_Class/Player/Player.h"
 #include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
 #include"../../Map_Class/Map.h"
+#include"../../Camera_Class/PlayerCamera.h"
 
 void Main_Scene::Initialize()
 {
