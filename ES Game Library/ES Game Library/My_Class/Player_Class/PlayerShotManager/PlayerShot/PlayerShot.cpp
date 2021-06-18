@@ -12,20 +12,19 @@ void PlayerShot::Initialize() {
 	
 	shot->SetMaterial(material);
 	shot->SetScale(0.25f);
+	
 }
 
 void PlayerShot::Update() {
+	
 	if (shot_flag)
 	{
 		shot_pos.z += speed;
 	}
-		
-
 	if (shot_pos.z <= shot_erace_pos)
 	{
 		shot_flag = false;
 	}
- 		
 
 	shot->SetPosition(shot_pos);
 	shot_pos = shot->GetPosition();
@@ -41,6 +40,9 @@ void PlayerShot::Draw3D()
 
 void PlayerShot::Shot(Vector3 pos) 
 {
-		shot_flag = true;
-		shot_pos = pos;
+
+		shot_flag = true;	
+ 		shot_pos = pos;
+
+		
 }

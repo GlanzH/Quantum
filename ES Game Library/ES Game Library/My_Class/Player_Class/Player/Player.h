@@ -51,4 +51,6 @@ private:
 	enum {HALF = 2};
 	const float material_power = 10.0f;
 	PlayerShotManager _PlayerShotManager;
+	
+
 };

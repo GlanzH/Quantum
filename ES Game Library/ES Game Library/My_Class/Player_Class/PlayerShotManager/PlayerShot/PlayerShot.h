@@ -14,10 +14,11 @@ public:
 private:
 	MODEL   shot;
 	Vector3 shot_pos;
-	bool    shot_flag = false;
+	
 
 	enum { HALF = 2 };
 	const float speed = 0.2f;
 	const float material_power = 10.0f;
-	float shot_erace_pos ;
+	float shot_erace_pos = 10.0f ;
+    bool    shot_flag = false;
 };

@@ -102,10 +102,12 @@ void Player::Player_Operation()
 	if (Input.GetKeybordInput(Keys_Down))
 		Charactor->Move(0, 0, +Speed_F);
 	
-
-
-	if (Input.GetKeybordInput(Keys_Space))
+	
+		if (Input.GetKeybordInput(Keys_Space))
 		_PlayerShotManager.Shot(GetPlayerPosition());
+	
+
+	
 
 }
 
