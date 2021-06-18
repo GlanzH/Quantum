@@ -37,11 +37,11 @@ private:
 
 	FONT font;
 	//🔶LEFT:RIGHT
-	const float Speed_LR = 0.01f;
+	const float Speed_LR = 0.0001f;
     //🔶FORNT
-	const float Speed_F = 0.25f;
+	const float Speed_F = 0.0025f;
 	//🔶BACK
-	const float Speed_B = 0.8f;
+	const float Speed_B = 0.0008f;
 
 	const Vector3 CharactorInitPos = Vector3(0, 0, 0.2f);
 	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);
