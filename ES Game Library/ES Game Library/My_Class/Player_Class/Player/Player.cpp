@@ -94,8 +94,14 @@ void Player::Player_Operation()
 	if (Input.GetKeybordInput(Keys_Left))
 		Charactor->Move(Speed_LR, 0, 0);
 		
+	if (Input.GetKeybordInput(Keys_Up))
+	{
+		Charactor->Move(0, 0, -Speed_F+ -Speed_B);
+	}
+
 	if (Input.GetKeybordInput(Keys_Down))
-		Charactor->Move(0, 0, Speed_B);
+		Charactor->Move(0, 0, +Speed_F);
+	
 
 
 	if (Input.GetKeybordInput(Keys_Space))

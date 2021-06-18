@@ -39,9 +39,9 @@ private:
 
 	FONT font;
 	//ŸLEFT:RIGHHT
-	const float Speed_LR = 0.008f;
+	const float Speed_LR = 0.05f;
 	//ŸFRONT
-	const float Speed_F = 0.05f;
+	const float Speed_F = 0.25f;
 	//ŸBACK
 	const float Speed_B = 0.09f;
 

@@ -30,7 +30,7 @@ void Main_Scene::Update()
 		return;
 	}
 	
-
+	map.Update();
 	//enemy_manager.Update();//
 }
 void Main_Scene::Draw()

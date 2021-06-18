@@ -1,7 +1,8 @@
 #pragma once
 #include "../../../../ESGLib.h"
 
-class PlayerShot {
+class PlayerShot 
+{
 public:
 	void Initialize();
 	void Update();
@@ -18,5 +19,5 @@ private:
 	enum { HALF = 2 };
 	const float speed = 0.2f;
 	const float material_power = 10.0f;
-	const float shot_erace_pos = 1000.0f;
+	float shot_erace_pos ;
 };
