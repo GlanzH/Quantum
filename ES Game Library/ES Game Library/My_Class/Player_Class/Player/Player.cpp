@@ -59,7 +59,7 @@ void Player::Charactor_Move()
 {
 	
 	//Šˆ“®§ŒÀ(”ÍˆÍ)
-	PlayerPosition.x = (PlayerPosition.x, 0.0f, 1280.0f - 63.0f);
+	
 
 	/*if (Character_x <= -60.0f)
 	{
