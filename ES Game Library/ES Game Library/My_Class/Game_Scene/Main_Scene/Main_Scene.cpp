@@ -8,40 +8,42 @@ void Main_Scene::Initialize()
 {
 	bg = GraphicsDevice.CreateSpriteFromFile(_T("GameSceneMaterial/MainScene_Material/Red.png"));
 	
-	Player::Instance().Initialize();
+	player.Initialize();
 	camera.Init();
 	map.Initialize();
-	
+	ui.Initialize();
 
 	//enemy_manager.Initialize();
 }
 void Main_Scene::Update()
 {
-	Player::Instance().Update();
-	
+
 	if (Input.GetKeybordInputDown(Keys_Enter))
 	{
 		SceneManager::ChangeScene(SceneManager::SCENE::CLAER_SCENE);
 		return;
 	}
-	if (Input.GetKeybordInputDown(Keys_LeftShift))
+	if (Input.GetKeybordInputDown(Keys_LeftShift) || ui.GetTime() == 0)
 	{
 		SceneManager::ChangeScene(SceneManager::SCENE::OVER_SCENE);
 		return;
 	}
-	
-	map.Update();
+
+	player.Update();
+	camera.Update();
+	ui.Update();
+
 	//enemy_manager.Update();//
 }
 void Main_Scene::Draw()
 {
 	//enemy_manager.Draw();
 	SpriteBatch.Draw(*bg,Vector3(Zero, Zero,10000));
-	
+	player.Draw();
+	ui.Draw();
 }
-void Main_Scene::Draw3D() 
-{
-	Player::Instance().Draw3D();
+void Main_Scene::Draw3D() {
+	player.Draw3D();
 	camera.Draw3D();
 	map.Draw3D();
 }

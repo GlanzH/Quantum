@@ -112,9 +112,9 @@ void Player::Player_Operation()
 }
 
 void Player::Draw() {
-	SpriteBatch.DrawString(font, Vector2(300,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
-	SpriteBatch.DrawString(font, Vector2(300,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
-	SpriteBatch.DrawString(font, Vector2(300,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
+	//SpriteBatch.DrawString(font, Vector2(600,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
+	//SpriteBatch.DrawString(font, Vector2(600,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
+	//SpriteBatch.DrawString(font, Vector2(600,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
 }
 
 MODEL Player::GetModel() {
