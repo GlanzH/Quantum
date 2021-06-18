@@ -22,7 +22,8 @@ void PlayerCamera::Init()
 	GraphicsDevice.SetCamera(camera);
 }
 
-void PlayerCamera::Update() {
+void PlayerCamera::Update()
+{
 	player_pos = player.GetPlayerPosition();
 
 }
