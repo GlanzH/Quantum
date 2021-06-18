@@ -1,86 +1,66 @@
 #include"Player.h"
+#include <cassert>
+#include <algorithm>
 
+Player::Player() {
+
+}
 
 void Player::Initialize()
 {
-	//キャラクター描画
-	Character = GraphicsDevice.CreateModelFromFile(_T("Player/player_car.x"));
-	
+	Charactor = GraphicsDevice.CreateModelFromFile(_T("Player/player_car.x"));
+	font = GraphicsDevice.CreateSpriteFont(_T("游明朝"), 30);
+
 	//プレイヤー状態などの初期化
-	Character_State();
-//------------------------------------------------------------
+	Charactor_State();
+
 	GraphicsDevice.SetRenderState(CullMode_None);
 
-	/*camera->SetView(Vector3(30, 10, 110), Vector3(0, 0, 0));
-	camera->SetPerspectiveFieldOfView(45.0f, 16.0f / 9.0f, 1.0f, 10000.0f);*/
-
-	/*GraphicsDevice.SetCamera(camera);*/
 	Material material;
-	material.Diffuse = Color(Vector3_One);
-	material.Ambient = Color(Vector3_One);
-	material.Specular = Color(Vector3_One);
-	material.Power = 10.0f;
-	Character->SetMaterial(material);
+	material.Emissive  = Color(Vector3_One);
+	material.Diffuse   = Color(Vector3_One);
+	material.Ambient   = Color(Vector3_One / HALF);
+	material.Specular  = Color(Vector3_One);
+	material.Power     = material_power;
+	Charactor->SetMaterial(material);
 
-	Character->SetPosition(Vector3(0, 0, 0.2f));
-	Character->SetScale(0.1f);
+	Charactor->SetPosition(CharactorInitPos);
+	Charactor->SetScale(1.f);
 
-	Character->Rotation(0.0f, 180.0f, 0.0f);
+	Charactor->Rotation(CharactorRotate);
 
-	
-
-	/*Light light;
-	light.Type = Light_Directional;
-	light.Direction = Vector3(0.0f, -1.0f, 1.0f);
-	light.Diffuse = Color(1.0f, 1.0f, 1.0f);
-	light.Ambient = Color(5.0f, 5.0f, 5.0f);
-	light.Specular = Color(1.0f, 1.0f, 1.0f);
-	GraphicsDevice.SetLight(light);*/
-
-	/*camera->GetRightVector();*/
-
-	//camera->GetFrontVector();
-	//座標の指定の仕方
-
-	/*Vector3(30, 0, 130);
-	camera->GetPosition();
-	camera->GetPosition() + Vector3(30, 0, 130);*/
-
-
-
-
-	/*attck.Initialize();*/
-
+	_PlayerShotManager.Initialize();
 }
-void Player::Character_State()
+
+void Player::Charactor_State()
 {
 	
 }
 
 void Player::Update()
 {
+	PlayerPosition = Charactor->GetPosition();
+	GetPlayerPosition();
+
 	//操作キーなどの記述
 	Player_Operation();
 	//ジャンプなどの記述
-	Character_Move();
+	Charactor_Move();
 
-	/*attck.Update();*/
-	
+	GetPlayerPosition();
+
+	_PlayerShotManager.Update();
+		
 }
+
 void Player::Draw3D()
 {
-	/*const Vector3 player_position = Character->GetPosition();*/
-	/*camera->SetLookAt(player_position - Character->GetFrontVector() * 15.0f + Vector3(0, 2, 0), player_position, Vector3_Up);*/
-	/*GraphicsDevice.SetCamera(camera);*/
-
-
-
-	Character->Draw();
-	/*attck.Draw();*/
+	Charactor->Draw();
+	_PlayerShotManager.Draw3D();
 }
 
 
-void Player::Character_Move()
+void Player::Charactor_Move()
 {
 	//ジャンプ処理
 	//活動制限(範囲)
@@ -106,31 +86,41 @@ void Player::Character_Move()
 
 void Player::Player_Operation()
 {
-	//カーソルキー ←→ を押したら移動移動
 	if (Input.GetKeybordInput(Keys_Right))
-	{
-		Character->Move(-speed, 0, 0);
-	}
+		Charactor->Move(-Speed, 0, 0);
+	
 	if (Input.GetKeybordInput(Keys_Left))
-	{
-		Character->Move( speed, 0, 0);
-	}
-	// カーソルキーの↑を押していて、地面についていたらジャンプ
+		Charactor->Move( Speed, 0, 0);
+	
+
 	if (Input.GetKeybordInput(Keys_Up))
-	{
+		Charactor->Move(0, 0, -Speed);
 		
-		
-	}
-	//スペースキーを押したら封印の御札発射
-	if (Input.GetKeybordInputDown(Keys_Space))
-	{
-	}
- 
-	PlayerPosition = Character->GetPosition();
+	if (Input.GetKeybordInput(Keys_Down))
+		Charactor->Move(0, 0, Speed);
+
+
+	if (Input.GetKeybordInput(Keys_Space))
+		_PlayerShotManager.Shot(GetPlayerPosition());
+
 }
 
-    
-	
+void Player::Draw() {
+	SpriteBatch.DrawString(font, Vector2(300,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
+	SpriteBatch.DrawString(font, Vector2(300,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
+	SpriteBatch.DrawString(font, Vector2(300,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
+}
+
+MODEL Player::GetModel() {
+	assert(Charactor && "Player::GetModel() -Charactor ptr nullptr");
+	return Charactor;
+}
+
+
+Vector3 Player::GetPlayerPosition() {
+	assert(PlayerPosition && "Player::GetPlayerPosition() - PlayerPosition ptr nullptr");
+		return PlayerPosition;
+}
 	
 	
 	

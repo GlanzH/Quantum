@@ -19,16 +19,13 @@ public:
 
 	virtual void DrawEnd() {};
 private:
-
-	SPRITE Main;
-	SPRITE Main_Secoud;
-	SPRITE Main_Third;
-	float Main_x;
-	float Main2_x;
-	float Main3_x;
+	SPRITE bg;
 	Map map;
-	/*PlayerCamera camera;
-    Player player;*/
+	PlayerCamera camera;
+    Player player;
 	//Enemy_Manager enemy_manager;
-	MUSIC  BGM;
+	enum MagicNum
+	{
+		Zero = 0
+	};
 };

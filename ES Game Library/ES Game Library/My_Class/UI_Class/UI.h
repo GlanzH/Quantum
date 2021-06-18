@@ -5,9 +5,9 @@
 class UI
 {
 public:
-	virtual void Initialize();
-	virtual void Update();
-	virtual void Draw();
+	void Initialize();
+	void Update();
+	void Draw();
 
 
 private:
