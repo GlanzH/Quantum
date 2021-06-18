@@ -19,7 +19,7 @@ private:
 	const Vector3 road_pos   = Vector3(0.0f, -0.25f, 0.0f);
 	const Vector3 side_pos   = Vector3(0.0f, -8.0f, 0.0f);
 	const Vector3 pillar_pos = Vector3_Zero;
-	unique_ptr<Player>player_pos;
+	std::unique_ptr<Player>player_pos;
 
 	float Move;
 

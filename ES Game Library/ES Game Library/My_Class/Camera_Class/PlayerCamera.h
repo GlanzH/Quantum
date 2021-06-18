@@ -2,6 +2,8 @@
 #include"../../ESGLib.h"
 #include "../Player_Class/Player/Player.h"
 
+
+
 class PlayerCamera
 {
 public:
@@ -9,6 +11,7 @@ public:
 	~PlayerCamera() {};
 
 	void Init();
+	void Update();
 	void Draw3D();
 	
 	CAMERA Getcamera() const{ return camera; };
@@ -21,11 +24,9 @@ private:
 	Light   light;
 	float camera_pos;
 	const float speed = 0.002f;
-	Player player;
 	Vector3 player_pos;
-
 	const Vector3 light_pos = Vector3( 0, 10, 0);
-
+	
 	const Vector3 camera_rotate   = Vector3(5.0f, 0.0f, 0.0f);
 	const Vector3 camera_init_pos = Vector3(0.0f, 0.04f, 0.0f);
 

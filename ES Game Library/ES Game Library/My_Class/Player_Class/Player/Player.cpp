@@ -28,7 +28,6 @@ void Player::Initialize()
 	Charactor->SetScale(1.f);
 
 	Charactor->Rotation(CharactorRotate);
-
 	_PlayerShotManager.Initialize();
 }
 
@@ -45,7 +44,7 @@ void Player::Update()
 	//操作キーなどの記述
 	Player_Operation();
 	//ジャンプなどの記述
-	Charactor_Move();
+	//Charactor_Move();
 
 	GetPlayerPosition();
 

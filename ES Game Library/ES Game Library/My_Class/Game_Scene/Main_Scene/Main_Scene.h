@@ -22,7 +22,7 @@ private:
 	SPRITE bg;
 	Map map;
 	PlayerCamera camera;
-    Player player;
+    
 	//Enemy_Manager enemy_manager;
 	enum MagicNum
 	{

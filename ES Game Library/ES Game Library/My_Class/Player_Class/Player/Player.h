@@ -8,7 +8,6 @@ class PlayerShotManager;
 class Player 
 {
 public:
-	Player::Player();
 
 	void Initialize();
     void Update();   
@@ -19,12 +18,15 @@ public:
 	MODEL   GetModel();
 	//MODEL   GetCollision();
 
-	static Player Instance() {
-		 Player instance;
+	static Player & Instance() 
+	{
+		static Player instance;
 		return instance;
 	}
 
 private:
+	Player::Player();
+
 	void Charactor_Move();     //◆移動状態
 	void Charactor_State();    //◆プレイヤーの状態
 	void Player_Operation();   //◆移動するためのキーボード操作
