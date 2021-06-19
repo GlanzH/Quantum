@@ -13,10 +13,8 @@ public:
     void Update();   
 	void Draw();
 	void Draw3D();    
-	Vector3 GetPlayerPosition();
-
-	MODEL   GetModel();
-	//MODEL   GetCollision();
+	Vector3 GetPlayerPosition() { return PlayerPosition; }
+	MODEL   GetCollision();
 
 	static Player & Instance() 
 	{
@@ -39,13 +37,13 @@ private:
 
 	FONT font;
 	//ÅüLEFT:RIGHHT
-	const float Speed_LR = 0.008f;
+	const float Speed_LR = 0.05f;
 	//ÅüFRONT
-	const float Speed_F = 0.05f;
+	const float Speed_F = 0.25f;
 	//ÅüBACK
 	const float Speed_B = 0.09f;
 
-	const Vector3 CharactorInitPos = Vector3(0, 0, 0.2f);
+	const Vector3 CharactorInitPos = Vector3(0, -0.05f, 0.2f);
 	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);
 
 	enum {HALF = 2};

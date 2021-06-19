@@ -9,7 +9,7 @@ void Map::Initialize()
 
 void Map::Update()
 {
-	Vector3 player_position = player_pos->GetPlayerPosition();
+	Vector3 player_position = Player::Instance().GetPlayerPosition();
 
 	for (int y = 0; y < model_position.size(); ++y)
 	{

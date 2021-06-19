@@ -1,8 +1,10 @@
 #include "Main_Scene.h"
-#include"../../Scene_Manegeer/SceneManager.h"
-#include"../../Player_Class/Player/Player.h"
-#include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
-#include"../../Map_Class/Map.h"
+
+Main_Scene::Main_Scene() {
+}
+
+Main_Scene::~Main_Scene(){
+}
 
 void Main_Scene::Initialize()
 {
@@ -11,27 +13,24 @@ void Main_Scene::Initialize()
 	Player::Instance().Initialize();
 	camera.Init();
 	map.Initialize();
-	
-
-	//enemy_manager.Initialize();
+	enemymanager.Initialize();
 }
 void Main_Scene::Update()
 {
 	Player::Instance().Update();
-	
+	map.Update();
+	enemymanager.Update();
+
 	if (Input.GetKeybordInputDown(Keys_Enter))
 	{
 		SceneManager::ChangeScene(SceneManager::SCENE::CLAER_SCENE);
-		return;
+		//return;
 	}
 	if (Input.GetKeybordInputDown(Keys_LeftShift))
 	{
 		SceneManager::ChangeScene(SceneManager::SCENE::OVER_SCENE);
-		return;
+		//return;
 	}
-	
-
-	//enemy_manager.Update();//
 }
 void Main_Scene::Draw()
 {
@@ -44,4 +43,5 @@ void Main_Scene::Draw3D()
 	Player::Instance().Draw3D();
 	camera.Draw3D();
 	map.Draw3D();
+	enemymanager.Draw3D();
 }

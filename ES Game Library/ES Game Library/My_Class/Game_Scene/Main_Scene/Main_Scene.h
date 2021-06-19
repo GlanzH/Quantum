@@ -1,16 +1,16 @@
 #pragma once
 #include"../../Scene_Manegeer/SceneManager.h"
+#include"../../EnemyManager/EnemyManager.h"
 #include"../../Player_Class/Player/Player.h"
-#include"../../All_Enemy/Enemy_Base/Enemy_Base.h"
-#include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
-#include"../../Camera_Class/PlayerCamera.h"
+#include"../../Camera_Class/PlayerCamera.h" 
 #include"../../Map_Class/Map.h"
 
 class Main_Scene : public BaseScene
 {
 public:
 	/*Main_Scene() : player(CollisionMediator) {};*/
-	virtual ~Main_Scene() {};
+	Main_Scene();
+	virtual  ~Main_Scene();
 
 	virtual void Initialize()override;
 	virtual void Update()    override;
@@ -22,8 +22,7 @@ private:
 	SPRITE bg;
 	Map map;
 	PlayerCamera camera;
-    
-	//Enemy_Manager enemy_manager;
+	EnemyManager enemymanager;
 	enum MagicNum
 	{
 		Zero = 0
