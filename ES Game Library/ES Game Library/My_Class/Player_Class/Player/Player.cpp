@@ -19,14 +19,14 @@ void Player::Initialize()
 	Material material;
 	material.Emissive  = Color(Vector3_One);
 	material.Diffuse   = Color(Vector3_One);
-	material.Ambient   = Color(Vector3_One / HALF);
+	material.Ambient   = Color(Vector3_One / half);
 	material.Specular  = Color(Vector3_One);
-	material.Power     = material_power;
+	material.Power     = MaterialPower;
 
 	Charactor->SetMaterial(material);
 
 	Charactor->SetPosition(CharactorInitPos);
-	Charactor->SetScale(1.f);
+	Charactor->SetScale(ModelScele);
 
 	Charactor->Rotation(CharactorRotate);
 
@@ -38,7 +38,7 @@ void Player::Initialize()
 	
 	Collision = GraphicsDevice.CreateModelFromSimpleShape(shape);
 	Collision->SetMaterial(material);
-	Collision->SetScale(0.2f,0.15f,0.5f);
+	Collision->SetScale(CollisionScale);
 
 	_PlayerShotManager.Initialize();
 }

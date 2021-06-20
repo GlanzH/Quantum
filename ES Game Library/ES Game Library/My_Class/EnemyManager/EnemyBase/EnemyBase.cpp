@@ -13,23 +13,23 @@ bool EnemyBase::Initialize() {
 	SimpleShape shape;
 	shape.Type = Shape_Box;
 
-	shape.Width = 1;
+	shape.Width  = 1;
 	shape.Height = 1;
 	shape.Length = 1;
 
 	Material material;
 	material.Emissive = Color(Vector3_One);
 	material.Diffuse = Color(Vector3_One);
-	material.Ambient = Color(Vector3_One / 2);
+	material.Ambient = Color(Vector3_One / half);
 	material.Specular = Color(Vector3_One);
-	material.Power = 10;
+	material.Power = material_power;
 
-	Model->SetPosition(0, 0, 50);
+	Model->SetPosition(model_init_pos);
 	Model->SetMaterial(material);
 
 	Collision = GraphicsDevice.CreateModelFromSimpleShape(shape);
 	Collision->SetMaterial(material);
-	Collision->SetScale(0.2f, 0.15f, 0.5f);
+	Collision->SetScale(collision_scele);
 	Collision->SetPosition(Model->GetPosition());
 
 	enemy_shot_manager.Initialize();

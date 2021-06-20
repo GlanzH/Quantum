@@ -43,10 +43,14 @@ private:
 	//ÅüBACK
 	const float Speed_B = 0.09f;
 
-	const Vector3 CharactorInitPos = Vector3(0, -0.05f, 0.2f);
-	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);
+	const float MaterialPower = 10.0f;
+	const float ModelScele    = 1.0f;
 
-	enum {HALF = 2};
-	const float material_power = 10.0f;
+	const Vector3 CharactorInitPos = Vector3(0,    -0.05f, 0.2f);
+	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);
+	const Vector3 CollisionScale   = Vector3(0.2f,  0.15f, 0.5f);
+
+	const int  half = 2;
+
 	PlayerShotManager _PlayerShotManager;
 };

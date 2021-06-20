@@ -7,25 +7,33 @@ public:
 	//staticはもともとあるもの（インスタンスする前からある）
 	//staticは一つしかないもの（定数など）
 	//static変数は絶対初期化必要
-	static enum SCENE
+	enum SCENE
 	{
 		TITLE,//タイトルシーン
 		MAIN,//ゲームのメインシーン
-		CLAER_SCENE,//クリアシーン
+		CLEAR_SCENE,//クリアシーン
 		OVER_SCENE,//ゲームオーバーシーン
 		RESULT//リザルトシーン
 	};
 	
-   static void ChangeScene(SCENE scene);
-   static void Update();
-   static void Draw();
-   static void Draw3D();
-   static void DrawEnd();
+   void ChangeScene(SCENE scene);
+   void Update();
+   void Draw();
+   void Draw3D();
+   void DrawEnd();
 
-   static  BaseScene* m_pScene;
+   void SetScore(int num);
+   int AddScore(int num);
+   int GetScore() { return score; }
 
-   static int index;
+   static SceneManager& Instance() {
+	   static SceneManager instance;
+	   return instance;
+   }
+
+   static BaseScene* m_pScene;
 
 private:
-	
+   static int index;
+   int score;
 };

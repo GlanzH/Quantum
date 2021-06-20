@@ -6,12 +6,12 @@ void PlayerShot::Initialize() {
 	Material material;
 	material.Emissive = Color(Vector3_One);
 	material.Diffuse  = Color(Vector3_One);
-	material.Ambient  = Color(Vector3_One / HALF);
+	material.Ambient  = Color(Vector3_One / half);
 	material.Specular = Color(Vector3_One);
 	material.Power    = material_power;
 	
 	shot->SetMaterial(material);
-	shot->SetScale(0.25f);
+	shot->SetScale(collision_scale);
 }
 
 void PlayerShot::Update() {

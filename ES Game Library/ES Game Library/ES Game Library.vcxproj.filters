@@ -118,9 +118,6 @@
     <Filter Include="ALL_Class\Game_Class">
       <UniqueIdentifier>{8b94a908-b2a5-4f23-80f5-404c7542ee3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ALL_Class\Game_Class\Game_Claer">
-      <UniqueIdentifier>{b0270669-f27e-4f49-b2f1-9ba74cbfb17d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ALL_Class\Game_Class\Game_Over">
       <UniqueIdentifier>{7ac58397-f166-4d55-9915-bd60a4ba5fcf}</UniqueIdentifier>
     </Filter>
@@ -189,6 +186,9 @@
     </Filter>
     <Filter Include="ALL_Class\EnemyManager\EnemyBase\EnemyShotManager\EnemyShot">
       <UniqueIdentifier>{5df8f1a0-0907-4a87-bbdc-1b6f9ec1f3b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Game_Class\Game_Clear">
+      <UniqueIdentifier>{b0270669-f27e-4f49-b2f1-9ba74cbfb17d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -334,9 +334,6 @@
     <ClCompile Include="Extension\Direct2D\Direct2D.cpp">
       <Filter>ソース ファイル\拡張\Direct2D</Filter>
     </ClCompile>
-    <ClCompile Include="My_Class\Game_Scene\Game_Claer\Game_Claer.cpp">
-      <Filter>ALL_Class\Game_Class\Game_Claer</Filter>
-    </ClCompile>
     <ClCompile Include="My_Class\Game_Scene\Game_Over\Game_Over.cpp">
       <Filter>ALL_Class\Game_Class\Game_Over</Filter>
     </ClCompile>
@@ -390,6 +387,9 @@
     </ClCompile>
     <ClCompile Include="My_Class\EnemyManager\EnemyShotManager\EnemyShot\EnemyShot.cpp">
       <Filter>ALL_Class\EnemyManager\EnemyBase\EnemyShotManager\EnemyShot</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Game_Scene\Game_Clear\Game_Clear.cpp">
+      <Filter>ALL_Class\Game_Class\Game_Clear</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -547,9 +547,6 @@
     <ClInclude Include="Extension\Direct2D\Direct2D.hpp">
       <Filter>ヘッダー ファイル\拡張\Direct2D</Filter>
     </ClInclude>
-    <ClInclude Include="My_Class\Game_Scene\Game_Claer\Game_Claer.h">
-      <Filter>ALL_Class\Game_Class\Game_Claer</Filter>
-    </ClInclude>
     <ClInclude Include="My_Class\Game_Scene\Game_Over\Game_Over.h">
       <Filter>ALL_Class\Game_Class\Game_Over</Filter>
     </ClInclude>
@@ -609,6 +606,9 @@
     </ClInclude>
     <ClInclude Include="My_Class\EnemyManager\EnemyShotManager\EnemyShot\EnemyShot.h">
       <Filter>ALL_Class\EnemyManager\EnemyBase\EnemyShotManager\EnemyShot</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Game_Scene\Game_Clear\Game_Clear.h">
+      <Filter>ALL_Class\Game_Class\Game_Clear</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

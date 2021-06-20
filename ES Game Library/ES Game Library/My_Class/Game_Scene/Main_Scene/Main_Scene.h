@@ -4,6 +4,7 @@
 #include"../../Player_Class/Player/Player.h"
 #include"../../Camera_Class/PlayerCamera.h" 
 #include"../../Map_Class/Map.h"
+#include"../../UI_Class/UI.h"
 
 class Main_Scene : public BaseScene
 {
@@ -23,8 +24,7 @@ private:
 	Map map;
 	PlayerCamera camera;
 	EnemyManager enemymanager;
-	enum MagicNum
-	{
-		Zero = 0
-	};
+	UI ui;
+
+	const Vector3 bg_pos = Vector3(0, 0, 10000);
 };

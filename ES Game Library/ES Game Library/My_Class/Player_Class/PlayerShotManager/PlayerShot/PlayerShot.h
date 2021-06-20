@@ -16,8 +16,10 @@ private:
 	Vector3 shot_pos;
 	bool    shot_flag = false;
 
-	enum { HALF = 2 };
+	const int half = 2;
+
 	const float speed = 0.2f;
-	const float material_power = 10.0f;
+	const float material_power  = 10.0f;
+	const float collision_scale = 0.25f;
 	float shot_erace_pos ;
 };

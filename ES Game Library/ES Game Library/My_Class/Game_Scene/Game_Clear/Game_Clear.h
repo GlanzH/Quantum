@@ -1,11 +1,11 @@
 #pragma once
 #include"../../Scene_Manegeer/SceneManager.h"
 
-class Game_Claer : public BaseScene
+class Game_Clear : public BaseScene
 {
 public:
-	Game_Claer() {};
-	virtual ~Game_Claer() {};
+	Game_Clear() {};
+	virtual ~Game_Clear() {};
 
 	virtual void Initialize()override;
 	virtual void Update()    override;
@@ -15,7 +15,12 @@ public:
 	virtual void DrawEnd() {};
 private:
 
-	SPRITE CLAER;
+	SPRITE Clear;
 	SPRITE Push;
 	float Blinking;
+
+	const float speed = 0.01f;  //点滅スピード
+
+		//!PUSH画像の座標
+	const Vector3 PushPos = Vector3(-400, 0, -1);
 };

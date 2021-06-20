@@ -28,6 +28,11 @@ private:
 	MODEL Collision;
 	int hp;
 
+	const float material_power = 10.0f;
+	const int half = 2;
+
 	Vector3 pos = Vector3_Zero;
-	const Vector3 collision_fit_pos = Vector3(0, 0.06f, 0);
+	const Vector3 collision_fit_pos    = Vector3(0.0f, 0.06f, 0.0f);
+	const Vector3 model_init_pos       = Vector3(0.0f, 0.0f, 50.0f);
+	const Vector3 collision_scele      = Vector3(0.2f, 0.15f, 0.5f);
 };

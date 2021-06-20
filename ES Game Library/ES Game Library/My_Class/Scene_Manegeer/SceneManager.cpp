@@ -1,7 +1,7 @@
 #include"SceneManager.h"
 #include"../Game_Scene/Title_Scene/Title_Scene.h"
 #include"../Game_Scene/Main_Scene/Main_Scene.h"
-#include"../Game_Scene/Game_Claer/Game_Claer.h"
+#include"../Game_Scene/Game_Clear/Game_Clear.h"
 #include"../Game_Scene/Game_Over/Game_Over.h"
 #include"../Game_Scene/Result_Scene/Result_Scene.h"
 BaseScene* SceneManager::m_pScene = nullptr;
@@ -20,8 +20,8 @@ void SceneManager::ChangeScene(SCENE scene)
 	case SCENE::MAIN:
 		m_pScene = new Main_Scene;
 		break;
-	case SCENE::CLAER_SCENE:
-		m_pScene = new Game_Claer;
+	case SCENE::CLEAR_SCENE:
+		m_pScene = new Game_Clear;
 		break;
 	case SCENE::OVER_SCENE:
 		m_pScene = new Game_Over;
@@ -47,4 +47,13 @@ void SceneManager::Draw3D() {
 void SceneManager::DrawEnd()
 {
 	m_pScene->DrawEnd();
+}
+
+void SceneManager::SetScore(int num) {
+	score = num;
+}
+
+int SceneManager::AddScore(int num) {
+	score += num;
+	return score;
 }
