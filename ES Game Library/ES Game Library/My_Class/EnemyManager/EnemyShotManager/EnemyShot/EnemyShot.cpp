@@ -6,12 +6,12 @@ void EnemyShot::Initialize() {
 	Material material;
 	material.Emissive = Color(Vector3_One);
 	material.Diffuse  = Color(Vector3_One);
-	material.Ambient  = Color(Vector3_One / HALF);
+	material.Ambient  = Color(Vector3_One / half);
 	material.Specular = Color(Vector3_One);
 	material.Power    = material_power;
 	
 	shot->SetMaterial(material);
-	shot->SetScale(0.25f);
+	shot->SetScale(model_scale);
 
 	SimpleShape shape;
 	shape.Type = Shape_Box;
@@ -20,7 +20,7 @@ void EnemyShot::Initialize() {
 	shape.Height = 1;
 
 	collision = GraphicsDevice.CreateModelFromSimpleShape(shape);
-	collision->SetScale(0.1f);
+	collision->SetScale(collision_scale);
 	collision->SetMaterial(material);
 	collision->SetPosition(shot_pos);
 }
@@ -38,16 +38,17 @@ void EnemyShot::Update() {
 
 
 	shot->SetPosition(shot_pos);
-	collision->SetPosition(shot_pos + Vector3(0,0.06f,0));
+	collision->SetPosition(shot_pos + collision_fit);
 	shot_pos = shot->GetPosition();
 }
 
 void EnemyShot::Draw3D() 
 {
 	
-	if(shot_flag)
-	shot->Draw();
-	//collision->Draw();
+	if (shot_flag) {
+		shot->Draw();
+		//collision->Draw();
+	}
 
 }
 

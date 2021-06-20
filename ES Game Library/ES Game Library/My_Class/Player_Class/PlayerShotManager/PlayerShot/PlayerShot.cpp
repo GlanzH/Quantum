@@ -11,36 +11,53 @@ void PlayerShot::Initialize() {
 	material.Power    = material_power;
 	
 	shot->SetMaterial(material);
-	shot->SetScale(collision_scale);
+	shot->SetScale(model_scale);
+
+	SimpleShape shape;
+	shape.Type = Shape_Box;
+	shape.Width = 1;
+	shape.Depth = 1;
+	shape.Height = 1;
+
+	collision = GraphicsDevice.CreateModelFromSimpleShape(shape);
+	collision->SetScale(collision_scale);
+	collision->SetMaterial(material);
+	collision->SetPosition(shot_pos);
 }
 
 void PlayerShot::Update() {
 	if (shot_flag)
-	{
 		shot_pos.z += speed;
-	}
-		
-
-	if (shot_pos.z <= shot_erace_pos)
-	{
+	
+	if (frame < MAX_COUNT && shot_flag)
+		frame++;
+	else {
 		shot_flag = false;
+		frame = MIN_COUNT;
 	}
  		
 
 	shot->SetPosition(shot_pos);
+	collision->SetPosition(shot_pos + collision_fit);
 	shot_pos = shot->GetPosition();
 }
 
 void PlayerShot::Draw3D() 
 {
 	
-	if(shot_flag)
-	shot->Draw();
-
+	if (shot_flag) {
+		shot->Draw();
+	//	collision->Draw();
+	}
 }
 
 void PlayerShot::Shot(Vector3 pos) 
 {
 		shot_flag = true;
 		shot_pos = pos;
+}
+
+MODEL PlayerShot::GetPlayerShotCollision() {
+	ASSERT(collision && "MODEL PlayerShot::GetPlayerShotCollision() - collision ptr nullptr");
+	return collision;
 }
