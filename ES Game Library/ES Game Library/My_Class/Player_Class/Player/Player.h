@@ -19,7 +19,8 @@ public:
 	MODEL   GetModel();
 	//MODEL   GetCollision();
 
-	static Player Instance() {
+	static Player Instance() 
+	{
 		Player instance;
 		return instance;
 	}
