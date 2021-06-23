@@ -19,22 +19,33 @@ void Player::Initialize()
 	Material material;
 	material.Emissive  = Color(Vector3_One);
 	material.Diffuse   = Color(Vector3_One);
-	material.Ambient   = Color(Vector3_One / HALF);
+	material.Ambient   = Color(Vector3_One / half);
 	material.Specular  = Color(Vector3_One);
-	material.Power     = material_power;
+	material.Power     = MaterialPower;
+
 	Charactor->SetMaterial(material);
 
 	Charactor->SetPosition(CharactorInitPos);
-	Charactor->SetScale(1.f);
+	Charactor->SetScale(ModelScele);
 
 	Charactor->Rotation(CharactorRotate);
+
+	SimpleShape shape;
+	shape.Type   = Shape_Box;
+	shape.Width  = 1;
+	shape.Depth  = 1;
+	shape.Height = 1;
+	
+	Collision = GraphicsDevice.CreateModelFromSimpleShape(shape);
+	Collision->SetMaterial(material);
+	Collision->SetScale(CollisionScale);
 
 	_PlayerShotManager.Initialize();
 }
 
 void Player::Charactor_State()
 {
-	
+
 }
 
 void Player::Update()
@@ -45,9 +56,11 @@ void Player::Update()
 	//操作キーなどの記述
 	Player_Operation();
 	//ジャンプなどの記述
-	Charactor_Move();
+	//Charactor_Move();
 
 	GetPlayerPosition();
+
+	Collision->SetPosition(Charactor->GetPosition() + Vector3(0,0.06f,0));
 
 	_PlayerShotManager.Update();
 		
@@ -56,6 +69,7 @@ void Player::Update()
 void Player::Draw3D()
 {
 	Charactor->Draw();
+	//Collision->Draw();
 	_PlayerShotManager.Draw3D();
 }
 
@@ -86,23 +100,28 @@ void Player::Charactor_Move()
 
 void Player::Player_Operation()
 {
+	Charactor->Move(0, 0,  -Speed_F);
+
+
 	if (Input.GetKeybordInput(Keys_Right))
-		Charactor->Move(-Speed, 0, 0);
+		Charactor->Move(-Speed_LR, 0, 0);
 	
 	if (Input.GetKeybordInput(Keys_Left))
-		Charactor->Move( Speed, 0, 0);
-	
-
-	if (Input.GetKeybordInput(Keys_Up))
-		Charactor->Move(0, 0, -Speed);
+		Charactor->Move(Speed_LR, 0, 0);
 		
+	if (Input.GetKeybordInput(Keys_Up))
+	{
+		Charactor->Move(0, 0, -Speed_F+ -Speed_B);
+	}
+
 	if (Input.GetKeybordInput(Keys_Down))
-		Charactor->Move(0, 0, Speed);
-
-
-	if (Input.GetKeybordInput(Keys_Space))
+		Charactor->Move(0, 0, +Speed_F);
+	
+	if (Input.GetKeybordInputDown(Keys_Space))
 		_PlayerShotManager.Shot(GetPlayerPosition());
 
+
+	
 }
 
 void Player::Draw() {
@@ -111,15 +130,9 @@ void Player::Draw() {
 	SpriteBatch.DrawString(font, Vector2(300,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
 }
 
-MODEL Player::GetModel() {
-	assert(Charactor && "Player::GetModel() -Charactor ptr nullptr");
-	return Charactor;
-}
-
-
-Vector3 Player::GetPlayerPosition() {
-	assert(PlayerPosition && "Player::GetPlayerPosition() - PlayerPosition ptr nullptr");
-		return PlayerPosition;
+MODEL Player::GetCollision() {
+	assert(Collision && "Player::GetCollision() - Collision ptr nullptr");
+	return Collision;
 }
 	
 	

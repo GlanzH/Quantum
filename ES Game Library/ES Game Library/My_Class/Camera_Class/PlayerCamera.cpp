@@ -22,10 +22,10 @@ void PlayerCamera::Init()
 	GraphicsDevice.SetCamera(camera);
 }
 
+
 void PlayerCamera::Draw3D()
 {
 	const Vector3 player_pos = Player::Instance().GetPlayerPosition();
-
 
 	camera->SetLookAt(player_pos + Vector3_Backward + camera_y, player_pos + camera_z, Vector3_Up);
 	GraphicsDevice.SetCamera(camera);

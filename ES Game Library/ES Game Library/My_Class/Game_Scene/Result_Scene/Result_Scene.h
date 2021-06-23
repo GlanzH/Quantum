@@ -14,20 +14,42 @@ public:
 
 	virtual void DrawEnd() {};
 private:
-	SPRITE BG;//背景
-	SPRITE RESULT;//リザルト文字
-	SPRITE Push;//Pushボタン
-	SPRITE Fast;//1位のボタン
-	SPRITE Second;//2位のボタン
-	SPRITE Third;//3位のボタン
+	SPRITE bg;     //背景
+	SPRITE result; //リザルト文字
+	SPRITE push;   //Pushボタン
+	SPRITE first;   //1位のボタン
+	SPRITE second; //2位のボタン
+	SPRITE third;  //3位のボタン
 	FONT font;
-	short int image_x;//
-	short int numbers_x;//
-	short int image_y;//
-	short int numbers_y;//
-	short int image_z;//
-	short int number;//
-	short int font_number;//
-	unsigned short int ranking_score[3];//
-	float Blinking;//点滅
+
+	//!順位
+	enum Rank {
+		FIRST,
+		SECOND,
+		THIRD,
+		NUM
+	};
+
+	//!スコア表示座標計算用
+	enum ScoreCalculate {
+		SCORE_FIRST  = 0,
+		SCORE_SECOND = 150,
+		SCORE_THIRD  = 300
+	};
+
+	//!フォントサイズ
+	const int font_size = 110;
+
+	//!PUSH画像の座標
+	const Vector3 push_pos = Vector3(-400,0,-1);
+
+	//!順位画像の初期座標
+	Vector3 image_pos = Vector3(200,170,-1);
+
+	//!スコア初期座標
+	Vector2 font_pos  = Vector2(600, 200);
+
+	int ranking_score[NUM]; 
+	float blinking = 0.0f;      //点滅用
+	const float speed = 0.01f;  //点滅スピード
 };

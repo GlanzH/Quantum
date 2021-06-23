@@ -9,14 +9,14 @@ void Game_Over::Initialize()
 }
 void Game_Over::Update()
 {
-	Blinking += 0.01f;
+	Blinking += Speed;
 	if (Input.GetKeybordInputDown(Keys_Enter))
 	{
-		SceneManager::ChangeScene(SceneManager::SCENE::TITLE);
+		SceneManager::Instance().ChangeScene(SceneManager::SCENE::TITLE);
 	}
 }
 void Game_Over::Draw()
 {
-	SpriteBatch.Draw(*OVER, Vector3(0, 0, 0));
-	SpriteBatch.Draw(*Push, Vector3(-400, -100, 0), Blinking);
+	SpriteBatch.Draw(*OVER, Vector3_Zero);
+	SpriteBatch.Draw(*Push, PushPos, Blinking);
 }

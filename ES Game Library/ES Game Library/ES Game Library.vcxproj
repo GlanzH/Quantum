@@ -164,14 +164,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Base\Enemy_Base.cpp" />
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_One\Enemy_One.cpp" />
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_Second\Enemy_Second.cpp" />
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_Third\Enemy_Third.cpp" />
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Manager\Enemy_Maneger.cpp" />
     <ClCompile Include="My_Class\Camera_Class\PlayerCamera.cpp" />
+    <ClCompile Include="My_Class\EnemyManager\EnemyBase\EnemyBase.cpp" />
+    <ClCompile Include="My_Class\EnemyManager\EnemyManager.cpp" />
+    <ClCompile Include="My_Class\EnemyManager\EnemyShotManager\EnemyShotManager.cpp" />
+    <ClCompile Include="My_Class\EnemyManager\EnemyShotManager\EnemyShot\EnemyShot.cpp" />
     <ClCompile Include="My_Class\EnumManager\EnumManager.cpp" />
-    <ClCompile Include="My_Class\Game_Scene\Game_Claer\Game_Claer.cpp" />
+    <ClCompile Include="My_Class\Game_Scene\Game_Clear\Game_Clear.cpp" />
     <ClCompile Include="My_Class\Game_Scene\Game_Over\Game_Over.cpp" />
     <ClCompile Include="My_Class\Game_Scene\Main_Scene\Main_Scene.cpp" />
     <ClCompile Include="My_Class\Game_Scene\Result_Scene\Result_Scene.cpp" />
@@ -237,14 +236,13 @@
     <ClInclude Include="GameMain.h" />
     <ClInclude Include="GameScene\SceneShared.hpp" />
     <ClInclude Include="GameScene\TemplateScene.hpp" />
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Base\Enemy_Base.h" />
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_One\Enemy_One.h" />
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_Second\Enemy_Second.h" />
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_Third\Enemy_Third.h" />
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Manager\Enemy_Manager.h" />
     <ClInclude Include="My_Class\Camera_Class\PlayerCamera.h" />
+    <ClInclude Include="My_Class\EnemyManager\EnemyBase\EnemyBase.h" />
+    <ClInclude Include="My_Class\EnemyManager\EnemyManager.h" />
+    <ClInclude Include="My_Class\EnemyManager\EnemyShotManager\EnemyShotManager.h" />
+    <ClInclude Include="My_Class\EnemyManager\EnemyShotManager\EnemyShot\EnemyShot.h" />
     <ClInclude Include="My_Class\EnumManager\EnumManager.h" />
-    <ClInclude Include="My_Class\Game_Scene\Game_Claer\Game_Claer.h" />
+    <ClInclude Include="My_Class\Game_Scene\Game_Clear\Game_Clear.h" />
     <ClInclude Include="My_Class\Game_Scene\Game_Over\Game_Over.h" />
     <ClInclude Include="My_Class\Game_Scene\Main_Scene\Main_Scene.h" />
     <ClInclude Include="My_Class\Game_Scene\Result_Scene\Result_Scene.h" />
@@ -300,6 +298,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resource\DirectX.ico" />
+    <None Include="My_Class\Placement_Fille\ObjectPlacement.csv" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Resource\Resource.rc" />

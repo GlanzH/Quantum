@@ -118,9 +118,6 @@
     <Filter Include="ALL_Class\Game_Class">
       <UniqueIdentifier>{8b94a908-b2a5-4f23-80f5-404c7542ee3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ALL_Class\Game_Class\Game_Claer">
-      <UniqueIdentifier>{b0270669-f27e-4f49-b2f1-9ba74cbfb17d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ALL_Class\Game_Class\Game_Over">
       <UniqueIdentifier>{7ac58397-f166-4d55-9915-bd60a4ba5fcf}</UniqueIdentifier>
     </Filter>
@@ -151,24 +148,6 @@
     <Filter Include="ALL_Class\EnumManager">
       <UniqueIdentifier>{569fbf47-a095-4f06-af54-83513fea39d1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ALL_Class\All_Enemy">
-      <UniqueIdentifier>{d3eb1c53-ab19-43f1-972c-b9c0d30b14b3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ALL_Class\All_Enemy\Enemy_Manager">
-      <UniqueIdentifier>{d4fb4e00-ab2c-4f0c-8f94-01ecf035ef00}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ALL_Class\All_Enemy\Enemy_Class">
-      <UniqueIdentifier>{a537104d-4061-4139-b655-41c60de6182a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ALL_Class\All_Enemy\Enemy_Class\Enemy_Second">
-      <UniqueIdentifier>{4a8f3b40-ef16-4d95-bc35-244fbb2532cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ALL_Class\All_Enemy\Enemy_Class\Enemy_Third">
-      <UniqueIdentifier>{89cdfa4c-a413-4cb8-be24-05e9453ad373}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ALL_Class\All_Enemy\Enemy_Base">
-      <UniqueIdentifier>{2860f265-3523-4de6-911c-cfb9d6533952}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ALL_Class\Mediator_Class">
       <UniqueIdentifier>{d4d04cc9-b66f-46d4-bc2a-b3cf56c1822a}</UniqueIdentifier>
     </Filter>
@@ -181,9 +160,6 @@
     <Filter Include="ALL_Class\UI_Class">
       <UniqueIdentifier>{58686fb3-19a8-41fb-b06e-204fd5035da3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ALL_Class\All_Enemy\Enemy_Class\Enemy_One">
-      <UniqueIdentifier>{ab421105-883b-4044-a784-e99d224735ec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ALL_Class\Camera_Class">
       <UniqueIdentifier>{145c5a7a-0fe2-4705-8445-a7c70215ef57}</UniqueIdentifier>
     </Filter>
@@ -195,6 +171,24 @@
     </Filter>
     <Filter Include="ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot">
       <UniqueIdentifier>{f0a16f05-7093-44c8-856f-0be06950582d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Placement_Fille">
+      <UniqueIdentifier>{9eb842e3-2709-4cff-b687-0fbf37aab362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\EnemyManager">
+      <UniqueIdentifier>{f422b817-cad9-4419-8727-78e89fd52e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\EnemyManager\EnemyBase">
+      <UniqueIdentifier>{e158ce2f-1f06-4fb8-98c1-bd3a1139fb25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\EnemyManager\EnemyBase\EnemyShotManager">
+      <UniqueIdentifier>{39f40299-2ba5-4ac1-b928-21988cf5e469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\EnemyManager\EnemyBase\EnemyShotManager\EnemyShot">
+      <UniqueIdentifier>{5df8f1a0-0907-4a87-bbdc-1b6f9ec1f3b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Game_Class\Game_Clear">
+      <UniqueIdentifier>{b0270669-f27e-4f49-b2f1-9ba74cbfb17d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -340,9 +334,6 @@
     <ClCompile Include="Extension\Direct2D\Direct2D.cpp">
       <Filter>ソース ファイル\拡張\Direct2D</Filter>
     </ClCompile>
-    <ClCompile Include="My_Class\Game_Scene\Game_Claer\Game_Claer.cpp">
-      <Filter>ALL_Class\Game_Class\Game_Claer</Filter>
-    </ClCompile>
     <ClCompile Include="My_Class\Game_Scene\Game_Over\Game_Over.cpp">
       <Filter>ALL_Class\Game_Class\Game_Over</Filter>
     </ClCompile>
@@ -367,23 +358,8 @@
     <ClCompile Include="My_Class\Mediator_Class\Mediator\Mediator.cpp">
       <Filter>ALL_Class\Mediator_Class\Mediator</Filter>
     </ClCompile>
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_Second\Enemy_Second.cpp">
-      <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_Second</Filter>
-    </ClCompile>
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_Third\Enemy_Third.cpp">
-      <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_Third</Filter>
-    </ClCompile>
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Manager\Enemy_Maneger.cpp">
-      <Filter>ALL_Class\All_Enemy\Enemy_Manager</Filter>
-    </ClCompile>
     <ClCompile Include="My_Class\UI_Class\UI.cpp">
       <Filter>ALL_Class\UI_Class</Filter>
-    </ClCompile>
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Base\Enemy_Base.cpp">
-      <Filter>ALL_Class\All_Enemy\Enemy_Base</Filter>
-    </ClCompile>
-    <ClCompile Include="My_Class\All_Enemy\Enemy_Class\Enemy_One\Enemy_One.cpp">
-      <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_One</Filter>
     </ClCompile>
     <ClCompile Include="My_Class\Map_Class\Map.cpp">
       <Filter>ALL_Class\Map_Class</Filter>
@@ -399,6 +375,21 @@
     </ClCompile>
     <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.cpp">
       <Filter>ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\EnemyManager\EnemyManager.cpp">
+      <Filter>ALL_Class\EnemyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\EnemyManager\EnemyBase\EnemyBase.cpp">
+      <Filter>ALL_Class\EnemyManager\EnemyBase</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\EnemyManager\EnemyShotManager\EnemyShotManager.cpp">
+      <Filter>ALL_Class\EnemyManager\EnemyBase\EnemyShotManager</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\EnemyManager\EnemyShotManager\EnemyShot\EnemyShot.cpp">
+      <Filter>ALL_Class\EnemyManager\EnemyBase\EnemyShotManager\EnemyShot</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Game_Scene\Game_Clear\Game_Clear.cpp">
+      <Filter>ALL_Class\Game_Class\Game_Clear</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -556,9 +547,6 @@
     <ClInclude Include="Extension\Direct2D\Direct2D.hpp">
       <Filter>ヘッダー ファイル\拡張\Direct2D</Filter>
     </ClInclude>
-    <ClInclude Include="My_Class\Game_Scene\Game_Claer\Game_Claer.h">
-      <Filter>ALL_Class\Game_Class\Game_Claer</Filter>
-    </ClInclude>
     <ClInclude Include="My_Class\Game_Scene\Game_Over\Game_Over.h">
       <Filter>ALL_Class\Game_Class\Game_Over</Filter>
     </ClInclude>
@@ -589,23 +577,8 @@
     <ClInclude Include="My_Class\Mediator_Class\Mediator\Mediator.h">
       <Filter>ALL_Class\Mediator_Class\Mediator</Filter>
     </ClInclude>
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_Second\Enemy_Second.h">
-      <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_Second</Filter>
-    </ClInclude>
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_Third\Enemy_Third.h">
-      <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_Third</Filter>
-    </ClInclude>
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Manager\Enemy_Manager.h">
-      <Filter>ALL_Class\All_Enemy\Enemy_Manager</Filter>
-    </ClInclude>
     <ClInclude Include="My_Class\UI_Class\UI.h">
       <Filter>ALL_Class\UI_Class</Filter>
-    </ClInclude>
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Base\Enemy_Base.h">
-      <Filter>ALL_Class\All_Enemy\Enemy_Base</Filter>
-    </ClInclude>
-    <ClInclude Include="My_Class\All_Enemy\Enemy_Class\Enemy_One\Enemy_One.h">
-      <Filter>ALL_Class\All_Enemy\Enemy_Class\Enemy_One</Filter>
     </ClInclude>
     <ClInclude Include="My_Class\Map_Class\Map.h">
       <Filter>ALL_Class\Map_Class</Filter>
@@ -622,10 +595,28 @@
     <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.h">
       <Filter>ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot</Filter>
     </ClInclude>
+    <ClInclude Include="My_Class\EnemyManager\EnemyManager.h">
+      <Filter>ALL_Class\EnemyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\EnemyManager\EnemyBase\EnemyBase.h">
+      <Filter>ALL_Class\EnemyManager\EnemyBase</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\EnemyManager\EnemyShotManager\EnemyShotManager.h">
+      <Filter>ALL_Class\EnemyManager\EnemyBase\EnemyShotManager</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\EnemyManager\EnemyShotManager\EnemyShot\EnemyShot.h">
+      <Filter>ALL_Class\EnemyManager\EnemyBase\EnemyShotManager\EnemyShot</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Game_Scene\Game_Clear\Game_Clear.h">
+      <Filter>ALL_Class\Game_Class\Game_Clear</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resource\DirectX.ico">
       <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="My_Class\Placement_Fille\ObjectPlacement.csv">
+      <Filter>Placement_Fille</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
