@@ -199,6 +199,9 @@
     <Filter Include="Placement_Fille">
       <UniqueIdentifier>{9eb842e3-2709-4cff-b687-0fbf37aab362}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ALL_Class\Object_Class">
+      <UniqueIdentifier>{1632ef45-7c84-4cc1-a4e4-9a58ce72380b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -402,6 +405,9 @@
     </ClCompile>
     <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.cpp">
       <Filter>ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Object_Class\Object.cpp">
+      <Filter>ALL_Class\Object_Class</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -624,6 +630,9 @@
     </ClInclude>
     <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.h">
       <Filter>ALL_Class\Player_Class\Player\PlayerShotManager\PlayerShot</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Object_Class\Object.h">
+      <Filter>ALL_Class\Object_Class</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

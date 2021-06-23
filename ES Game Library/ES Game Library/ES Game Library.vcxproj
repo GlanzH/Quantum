@@ -179,6 +179,7 @@
     <ClCompile Include="My_Class\Map_Class\Map.cpp" />
     <ClCompile Include="My_Class\Mediator_Class\Mediator\Mediator.cpp" />
     <ClCompile Include="My_Class\MngInput\MngInput.cpp" />
+    <ClCompile Include="My_Class\Object_Class\Object.cpp" />
     <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShotManager.cpp" />
     <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.cpp" />
     <ClCompile Include="My_Class\Player_Class\Player\Player.cpp" />
@@ -253,6 +254,7 @@
     <ClInclude Include="My_Class\Mediator_Class\Mediator\Mediator.h" />
     <ClInclude Include="My_Class\MngInput\ManagerBase.h" />
     <ClInclude Include="My_Class\MngInput\MngInput.h" />
+    <ClInclude Include="My_Class\Object_Class\Object.h" />
     <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShotManager.h" />
     <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.h" />
     <ClInclude Include="My_Class\Player_Class\Player\Player.h" />
