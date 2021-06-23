@@ -28,7 +28,7 @@ void Main_Scene::Update()
 		SceneManager::Instance().ChangeScene(SceneManager::SCENE::CLEAR_SCENE);
 		//return;
 	}
-	if (Input.GetKeybordInputDown(Keys_LeftShift))
+	if (ui.gameover_flg == true)
 	{
 		SceneManager::Instance().ChangeScene(SceneManager::SCENE::OVER_SCENE);
 		//return;

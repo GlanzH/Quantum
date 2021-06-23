@@ -11,7 +11,7 @@ public:
 
 	int GetTime() { return time; }
 	void TimeLeft();
-
+	bool gameover_flg = false;
 
 private:
 	enum Time  {MIN_TIME, MAX_TIME  = 30};
@@ -26,5 +26,6 @@ private:
 	FONT font,score_font;
 	int time  = MAX_TIME;
 	int frame = MIN_FRAME;
+
 };
 
