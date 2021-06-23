@@ -1,12 +1,5 @@
 #include"EnemyManager.h"
 
-EnemyManager::EnemyManager() {
-
-}
-
-EnemyManager::~EnemyManager() {
-
-}
 
 bool EnemyManager::Initialize() {
 	enemy.Initialize();
