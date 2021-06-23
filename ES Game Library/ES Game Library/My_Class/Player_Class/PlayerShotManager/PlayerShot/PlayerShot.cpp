@@ -57,7 +57,7 @@ void PlayerShot::Shot(Vector3 pos)
 		shot_pos = pos;
 }
 
-MODEL PlayerShot::GetPlayerShotCollision() {
+MODEL PlayerShot::GetCollision() {
 	ASSERT(collision && "MODEL PlayerShot::GetPlayerShotCollision() - collision ptr nullptr");
 	return collision;
 }

@@ -58,7 +58,7 @@ void EnemyShot::Shot(Vector3 pos)
 		shot_pos = pos;
 }
 
-MODEL EnemyShot::GetEnemyShotCollision() {
+MODEL EnemyShot::GetCollision() {
 	ASSERT(collision && "-EnemyShot::GetEnemyShotCollision() collision ptr nullptr");
 	return collision;
 }

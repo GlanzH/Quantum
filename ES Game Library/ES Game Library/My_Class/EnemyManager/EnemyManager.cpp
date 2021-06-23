@@ -34,3 +34,7 @@ int EnemyManager::Update() {
 void EnemyManager::Draw3D() {
 	enemy.Draw3D();
 }
+
+std::list<EnemyBase*> EnemyManager::PushBackList() {
+	//enemy_list.push_back();
+}
