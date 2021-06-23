@@ -1,4 +1,4 @@
-ï»¿#pragma once
+#pragma once
 #include"../../../ESGLib.h"
 #include"../PlayerShotManager/PlayerShotManager.h"
 #include "../../Scene_Manegeer/BaseScene.h"
@@ -8,27 +8,26 @@ class PlayerShotManager;
 class Player 
 {
 public:
-	Player::Player();
 
 	void Initialize();
     void Update();   
 	void Draw();
 	void Draw3D();    
-	Vector3 GetPlayerPosition();
+	Vector3 GetPlayerPosition() { return PlayerPosition; }
+	MODEL   GetCollision();
 
-	MODEL   GetModel();
-	//MODEL   GetCollision();
-
-	static Player Instance() 
+	static Player & Instance() 
 	{
-		Player instance;
+		static Player instance;
 		return instance;
 	}
 
 private:
-	void Charactor_Move();     //ğŸ”¶ç§»å‹•çŠ¶æ…‹
-	void Charactor_State();    //ğŸ”¶ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®çŠ¶æ…‹
-	void Player_Operation();   //ğŸ”¶ç§»å‹•ã™ã‚‹ãŸã‚ã®ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æ“ä½œ
+	Player::Player();
+
+	void Charactor_Move();     //ŸˆÚ“®ó‘Ô
+	void Charactor_State();    //ŸƒvƒŒƒCƒ„[‚Ìó‘Ô
+	void Player_Operation();   //ŸˆÚ“®‚·‚é‚½‚ß‚ÌƒL[ƒ{[ƒh‘€ì
 
 	MODEL Charactor;
 	MODEL Collision;
@@ -37,17 +36,21 @@ private:
 	//Vector3 
 
 	FONT font;
-	//ğŸ”¶LEFT:RIGHT
-	const float Speed_LR = 0.0001f;
-    //ğŸ”¶FORNT
-	const float Speed_F = 0.0025f;
-	//ğŸ”¶BACK
-	const float Speed_B = 0.0008f;
+	//ŸLEFT:RIGHHT
+	const float Speed_LR = 0.05f;
+	//ŸFRONT
+	const float Speed_F = 0.25f;
+	//ŸBACK
+	const float Speed_B = 0.09f;
 
-	const Vector3 CharactorInitPos = Vector3(0, 0, 0.2f);
+	const float MaterialPower = 10.0f;
+	const float ModelScele    = 1.0f;
+
+	const Vector3 CharactorInitPos = Vector3(0,    -0.05f, 0.2f);
 	const Vector3 CharactorRotate  = Vector3(0.0f, 180.0f, 0.0f);
+	const Vector3 CollisionScale   = Vector3(0.2f,  0.15f, 0.5f);
 
-	enum {HALF = 2};
-	const float material_power = 10.0f;
+	const int  half = 2;
+
 	PlayerShotManager _PlayerShotManager;
 };

@@ -1,7 +1,7 @@
-#include "PlayerShot.h"
+#include "EnemyShot.h"
 
-void PlayerShot::Initialize() {
-	shot = GraphicsDevice.CreateModelFromFile(_T("Player/ball/blue.X"));
+void EnemyShot::Initialize() {
+	shot = GraphicsDevice.CreateModelFromFile(_T("Player/ball/red.X"));
 
 	Material material;
 	material.Emissive = Color(Vector3_One);
@@ -25,7 +25,7 @@ void PlayerShot::Initialize() {
 	collision->SetPosition(shot_pos);
 }
 
-void PlayerShot::Update() {
+void EnemyShot::Update() {
 	if (shot_flag)
 		shot_pos.z += speed;
 	
@@ -35,29 +35,30 @@ void PlayerShot::Update() {
 		shot_flag = false;
 		frame = MIN_COUNT;
 	}
- 		
+
 
 	shot->SetPosition(shot_pos);
 	collision->SetPosition(shot_pos + collision_fit);
 	shot_pos = shot->GetPosition();
 }
 
-void PlayerShot::Draw3D() 
+void EnemyShot::Draw3D() 
 {
 	
 	if (shot_flag) {
 		shot->Draw();
-	//	collision->Draw();
+		//collision->Draw();
 	}
+
 }
 
-void PlayerShot::Shot(Vector3 pos) 
+void EnemyShot::Shot(Vector3 pos) 
 {
 		shot_flag = true;
 		shot_pos = pos;
 }
 
-MODEL PlayerShot::GetPlayerShotCollision() {
-	ASSERT(collision && "MODEL PlayerShot::GetPlayerShotCollision() - collision ptr nullptr");
+MODEL EnemyShot::GetEnemyShotCollision() {
+	ASSERT(collision && "-EnemyShot::GetEnemyShotCollision() collision ptr nullptr");
 	return collision;
 }

@@ -17,4 +17,9 @@ private:
 	SPRITE OVER;
 	SPRITE Push;
 	float Blinking;
+
+	const float Speed = 0.01f;  //点滅スピード
+
+	//!PUSH画像の座標
+	const Vector3 PushPos = Vector3(-400, 0, -1);
 };

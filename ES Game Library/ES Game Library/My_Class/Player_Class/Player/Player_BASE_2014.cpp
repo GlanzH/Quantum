@@ -19,33 +19,21 @@ void Player::Initialize()
 	Material material;
 	material.Emissive  = Color(Vector3_One);
 	material.Diffuse   = Color(Vector3_One);
-	material.Ambient   = Color(Vector3_One / half);
+	material.Ambient   = Color(Vector3_One / HALF);
 	material.Specular  = Color(Vector3_One);
-	material.Power     = MaterialPower;
-
+	material.Power     = material_power;
 	Charactor->SetMaterial(material);
 
 	Charactor->SetPosition(CharactorInitPos);
-	Charactor->SetScale(ModelScele);
+	Charactor->SetScale(1.f);
 
 	Charactor->Rotation(CharactorRotate);
-
-	SimpleShape shape;
-	shape.Type   = Shape_Box;
-	shape.Width  = 1;
-	shape.Depth  = 1;
-	shape.Height = 1;
-	
-	Collision = GraphicsDevice.CreateModelFromSimpleShape(shape);
-	Collision->SetMaterial(material);
-	Collision->SetScale(CollisionScale);
-
 	_PlayerShotManager.Initialize();
 }
 
 void Player::Charactor_State()
 {
-
+	
 }
 
 void Player::Update()
@@ -60,8 +48,6 @@ void Player::Update()
 
 	GetPlayerPosition();
 
-	Collision->SetPosition(Charactor->GetPosition() + Vector3(0,0.06f,0));
-
 	_PlayerShotManager.Update();
 		
 }
@@ -69,7 +55,6 @@ void Player::Update()
 void Player::Draw3D()
 {
 	Charactor->Draw();
-	//Collision->Draw();
 	_PlayerShotManager.Draw3D();
 }
 
@@ -117,22 +102,28 @@ void Player::Player_Operation()
 	if (Input.GetKeybordInput(Keys_Down))
 		Charactor->Move(0, 0, +Speed_F);
 	
-	if (Input.GetKeybordInputDown(Keys_Space))
+
+
+	if (Input.GetKeybordInput(Keys_Space))
 		_PlayerShotManager.Shot(GetPlayerPosition());
 
-
-	
 }
 
 void Player::Draw() {
-	SpriteBatch.DrawString(font, Vector2(300,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
-	SpriteBatch.DrawString(font, Vector2(300,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
-	SpriteBatch.DrawString(font, Vector2(300,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
+	//SpriteBatch.DrawString(font, Vector2(600,0), Color_White, _T("x: %.02f"),   GetPlayerPosition().x);
+	//SpriteBatch.DrawString(font, Vector2(600,50), Color_White, _T("y: %.02f"),  GetPlayerPosition().y);
+	//SpriteBatch.DrawString(font, Vector2(600,100), Color_White, _T("z: %.02f"), GetPlayerPosition().z);
 }
 
-MODEL Player::GetCollision() {
-	assert(Collision && "Player::GetCollision() - Collision ptr nullptr");
-	return Collision;
+MODEL Player::GetModel() {
+	assert(Charactor && "Player::GetModel() -Charactor ptr nullptr");
+	return Charactor;
+}
+
+
+Vector3 Player::GetPlayerPosition() {
+	assert(PlayerPosition && "Player::GetPlayerPosition() - PlayerPosition ptr nullptr");
+		return PlayerPosition;
 }
 	
 	

@@ -15,15 +15,18 @@ void PlayerCamera::Init()
 
 	camera->SetView(Vector3_Zero, Vector3_Zero);
 	camera->SetPerspectiveFieldOfView(camera_pos, 16.0f / 9.0f, 0.1f, 100.0f);
+	//camera->SetRotation(camera_rotate);
+	//camera->SetPosition(camera_init_pos);
+
 	GraphicsDevice.SetLight(light);
 	GraphicsDevice.SetCamera(camera);
 }
 
 
-
 void PlayerCamera::Draw3D()
 {
 	const Vector3 player_pos = Player::Instance().GetPlayerPosition();
+
 	camera->SetLookAt(player_pos + Vector3_Backward + camera_y, player_pos + camera_z, Vector3_Up);
 	GraphicsDevice.SetCamera(camera);
 }

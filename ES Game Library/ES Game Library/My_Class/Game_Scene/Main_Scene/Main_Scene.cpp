@@ -1,49 +1,50 @@
-	
 #include "Main_Scene.h"
-#include"../../Scene_Manegeer/SceneManager.h"
-#include"../../Player_Class/Player/Player.h"
-#include"../../All_Enemy/Enemy_Manager/Enemy_Manager.h"
-#include"../../Map_Class/Map.h"
+
+Main_Scene::Main_Scene() {
+}
+
+Main_Scene::~Main_Scene(){
+}
 
 void Main_Scene::Initialize()
 {
 	bg = GraphicsDevice.CreateSpriteFromFile(_T("GameSceneMaterial/MainScene_Material/Red.png"));
-
+	
 	Player::Instance().Initialize();
 	camera.Init();
 	map.Initialize();
+	enemymanager.Initialize();
 	ui.Initialize();
-
-	//enemy_manager.Initialize();
 }
 void Main_Scene::Update()
 {
 	Player::Instance().Update();
+	map.Update();
+	enemymanager.Update();
+	ui.Update();
 
 	if (Input.GetKeybordInputDown(Keys_Enter))
 	{
-		SceneManager::ChangeScene(SceneManager::SCENE::CLAER_SCENE);
-		return;
+		SceneManager::Instance().ChangeScene(SceneManager::SCENE::CLEAR_SCENE);
+		//return;
 	}
 	if (Input.GetKeybordInputDown(Keys_LeftShift))
 	{
-		SceneManager::ChangeScene(SceneManager::SCENE::OVER_SCENE);
-		return;
+		SceneManager::Instance().ChangeScene(SceneManager::SCENE::OVER_SCENE);
+		//return;
 	}
-	ui.Update();
-	map.Update();
-	//enemy_manager.Update();//
 }
 void Main_Scene::Draw()
 {
 	//enemy_manager.Draw();
-	SpriteBatch.Draw(*bg, Vector3(Zero, Zero, 10000));
-
+	SpriteBatch.Draw(*bg,bg_pos);
+	ui.Draw();
+	
 }
-void Main_Scene::Draw3D()
+void Main_Scene::Draw3D() 
 {
 	Player::Instance().Draw3D();
-	ui.Draw();
 	camera.Draw3D();
 	map.Draw3D();
+	enemymanager.Draw3D();
 }

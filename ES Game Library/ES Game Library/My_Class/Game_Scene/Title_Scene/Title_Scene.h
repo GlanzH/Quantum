@@ -14,16 +14,17 @@ public:
 
 	virtual void DrawEnd() {};
 private:
-	SPRITE Title_BG;
+	SPRITE TitleBG;
 	SPRITE Tachyon;
-	SPRITE particles;
+	SPRITE Particles;
 	SPRITE Letter;
-	SOUND se;
-	short int character_move;
-	float Blinking;
+	SOUND Se;
+	short int   CharacterMove;
+	float       Blinking;
+	const float Speed = 0.01f;
 	enum Magic_Num
 	{
-		Zero = 0,
+		ZERO = 0,
 		APPEARANCE = 1280,
 		Y_POS = 75,
 		MOVE = 20,

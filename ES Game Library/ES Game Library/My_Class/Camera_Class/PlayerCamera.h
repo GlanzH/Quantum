@@ -24,7 +24,6 @@ private:
 	Light   light;
 	float camera_pos;
 	const float speed = 0.002f;
-	Vector3 player_pos;
 	const Vector3 light_pos = Vector3( 0, 10, 0);
 	
 	const Vector3 camera_rotate   = Vector3(5.0f, 0.0f, 0.0f);
