@@ -10,6 +10,11 @@ EnemyBase::~EnemyBase() {
 bool EnemyBase::Initialize() {
 	Model = GraphicsDevice.CreateModelFromFile(_T("Enemy_Material/red/jiki_car_red.X"));
 
+	model_parameters.tags = 'E';
+	model_parameters.p_model_position_revision.y = 0.05f;
+
+	this->attack_parameters._Type = ATTACK_TYPE::DAMEGE;
+
 	SimpleShape shape;
 	shape.Type = Shape_Box;
 

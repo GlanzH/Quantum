@@ -2,10 +2,11 @@
 #include"../../../ESGLib.h"
 #include"../../Player_Class/Player/Player.h"
 #include"../EnemyShotManager/EnemyShotManager.h"
+#include"../../Object_Class/Object_Base/ObjectBase.h"
 
 using namespace std;
 
-class EnemyBase {
+class EnemyBase : public Object {
 public:
 	EnemyBase();
 	~EnemyBase();
