@@ -1,5 +1,6 @@
 #include"UI.h"
 
+
 void UI::Initialize()
 {
 	//!ファイルをダウンロードさせず、プログラムで読み込みフォント作成
@@ -11,6 +12,11 @@ void UI::Initialize()
 void UI::Update()
 {
 	TimeLeft();
+	if (time == 0)
+	{
+		gameover_flg = true;
+	}
+	
 }
 
 void UI::Draw()
@@ -21,13 +27,15 @@ void UI::Draw()
 }
 
 void UI::TimeLeft() {
-	if (time > MIN_TIME) {
+	if (time > MIN_TIME) 
+	{
 		if (frame < MAX_FRAME)
 			frame++;
 		else {
 			time--;
 			frame = MIN_FRAME;
 		}
+
 	}
 
 }

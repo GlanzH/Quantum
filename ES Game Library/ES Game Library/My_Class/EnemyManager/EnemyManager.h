@@ -11,6 +11,7 @@ public:
 	int  Update();
 	void Draw3D();
 	void Generate();
+	std::list<EnemyBase*> PushBackList();
 private:
 	int frame = 0;
 

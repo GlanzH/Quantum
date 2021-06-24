@@ -12,7 +12,7 @@ public:
 	void  Shot(Vector3 pos);
 	int   IsShot() { return shot_flag; }
 
-	MODEL GetEnemyShotCollision();
+	MODEL GetCollision();
 
 private:
 	MODEL   shot;

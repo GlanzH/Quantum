@@ -1,5 +1,12 @@
 #include"EnemyManager.h"
 
+EnemyManager::EnemyManager() {
+
+}
+
+EnemyManager::~EnemyManager() {
+
+}
 
 bool EnemyManager::Initialize() {
 	enemy.Initialize();
@@ -26,12 +33,8 @@ int EnemyManager::Update() {
 
 void EnemyManager::Draw3D() {
 	enemy.Draw3D();
-<<<<<<< Updated upstream
-}
-=======
 }
 
-//std::list<EnemyBase*> EnemyManager::PushBackList() {
-//	//enemy_list.push_back();
-//}
->>>>>>> Stashed changes
+std::list<EnemyBase*> EnemyManager::PushBackList() {
+	//enemy_list.push_back();
+}

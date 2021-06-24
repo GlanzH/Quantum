@@ -25,6 +25,6 @@ private:
 	PlayerCamera camera;
 	EnemyManager enemymanager;
 	UI ui;
-
+	/*UI* p_ui = nullptr;*/
 	const Vector3 bg_pos = Vector3(0, 0, 10000);
 };

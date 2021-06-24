@@ -16,7 +16,7 @@ public:
 	Vector3 GetPlayerPosition() { return PlayerPosition; }
 	MODEL   GetCollision();
 
-	static Player & Instance() 
+	static Player& Instance() 
 	{
 		static Player instance;
 		return instance;
@@ -51,6 +51,8 @@ private:
 	const Vector3 CollisionScale   = Vector3(0.2f,  0.15f, 0.5f);
 
 	const int  half = 2;
+
+	const float move_limit_x = 1.2f;
 
 	PlayerShotManager _PlayerShotManager;
 };
