@@ -165,6 +165,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="My_Class\Camera_Class\PlayerCamera.cpp" />
+    <ClCompile Include="My_Class\DATE\Map_Date\MapDate.cpp" />
     <ClCompile Include="My_Class\EnemyManager\EnemyBase\EnemyBase.cpp" />
     <ClCompile Include="My_Class\EnemyManager\EnemyManager.cpp" />
     <ClCompile Include="My_Class\EnemyManager\EnemyShotManager\EnemyShotManager.cpp" />
@@ -178,6 +179,8 @@
     <ClCompile Include="My_Class\Map_Class\Map.cpp" />
     <ClCompile Include="My_Class\Mediator_Class\Mediator\Mediator.cpp" />
     <ClCompile Include="My_Class\MngInput\MngInput.cpp" />
+    <ClCompile Include="My_Class\Object_Class\Item_Object\Item_Class.cpp" />
+    <ClCompile Include="My_Class\Object_Class\Object_Base\ObjectBase.cpp" />
     <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShotManager.cpp" />
     <ClCompile Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.cpp" />
     <ClCompile Include="My_Class\Player_Class\Player\Player.cpp" />
@@ -237,6 +240,7 @@
     <ClInclude Include="GameScene\SceneShared.hpp" />
     <ClInclude Include="GameScene\TemplateScene.hpp" />
     <ClInclude Include="My_Class\Camera_Class\PlayerCamera.h" />
+    <ClInclude Include="My_Class\DATE\Map_Date\MapDate.h" />
     <ClInclude Include="My_Class\EnemyManager\EnemyBase\EnemyBase.h" />
     <ClInclude Include="My_Class\EnemyManager\EnemyManager.h" />
     <ClInclude Include="My_Class\EnemyManager\EnemyShotManager\EnemyShotManager.h" />
@@ -251,6 +255,8 @@
     <ClInclude Include="My_Class\Mediator_Class\Mediator\Mediator.h" />
     <ClInclude Include="My_Class\MngInput\ManagerBase.h" />
     <ClInclude Include="My_Class\MngInput\MngInput.h" />
+    <ClInclude Include="My_Class\Object_Class\Item_Object\Item_Class.h" />
+    <ClInclude Include="My_Class\Object_Class\Object_Base\ObjectBase.h" />
     <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShotManager.h" />
     <ClInclude Include="My_Class\Player_Class\PlayerShotManager\PlayerShot\PlayerShot.h" />
     <ClInclude Include="My_Class\Player_Class\Player\Player.h" />

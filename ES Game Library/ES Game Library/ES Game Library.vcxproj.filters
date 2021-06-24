@@ -190,6 +190,21 @@
     <Filter Include="ALL_Class\Game_Class\Game_Clear">
       <UniqueIdentifier>{b0270669-f27e-4f49-b2f1-9ba74cbfb17d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ALL_Class\Object_Class">
+      <UniqueIdentifier>{264b8825-d871-49ee-b46a-3e751d9a12da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Object_Class\Item_Class">
+      <UniqueIdentifier>{3e863c80-5fed-4aeb-9218-0322edf68b93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Object_Class\Object_Base">
+      <UniqueIdentifier>{a506bc78-f11b-4ee6-8889-91be2f303a6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Date">
+      <UniqueIdentifier>{290b9ecc-0394-41c5-a277-90527952b455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALL_Class\Date\Map_Date">
+      <UniqueIdentifier>{32eab2bd-b9bd-4166-8692-2301ed49f331}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -390,6 +405,15 @@
     </ClCompile>
     <ClCompile Include="My_Class\Game_Scene\Game_Clear\Game_Clear.cpp">
       <Filter>ALL_Class\Game_Class\Game_Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Object_Class\Item_Object\Item_Class.cpp">
+      <Filter>ALL_Class\Object_Class\Item_Class</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\Object_Class\Object_Base\ObjectBase.cpp">
+      <Filter>ALL_Class\Object_Class\Object_Base</Filter>
+    </ClCompile>
+    <ClCompile Include="My_Class\DATE\Map_Date\MapDate.cpp">
+      <Filter>ALL_Class\Date\Map_Date</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -609,6 +633,15 @@
     </ClInclude>
     <ClInclude Include="My_Class\Game_Scene\Game_Clear\Game_Clear.h">
       <Filter>ALL_Class\Game_Class\Game_Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Object_Class\Item_Object\Item_Class.h">
+      <Filter>ALL_Class\Object_Class\Item_Class</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Object_Class\Object_Base\ObjectBase.h">
+      <Filter>ALL_Class\Object_Class\Object_Base</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\DATE\Map_Date\MapDate.h">
+      <Filter>ALL_Class\Date\Map_Date</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
