@@ -415,6 +415,9 @@
     <ClCompile Include="My_Class\DATE\Map_Date\MapDate.cpp">
       <Filter>ALL_Class\Date\Map_Date</Filter>
     </ClCompile>
+    <ClCompile Include="My_Class\Map_Class\ObjectPlan.cpp">
+      <Filter>ALL_Class\Map_Class</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameMain.h">
@@ -642,6 +645,9 @@
     </ClInclude>
     <ClInclude Include="My_Class\DATE\Map_Date\MapDate.h">
       <Filter>ALL_Class\Date\Map_Date</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Class\Map_Class\ObjectPlan.h">
+      <Filter>ALL_Class\Map_Class</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
